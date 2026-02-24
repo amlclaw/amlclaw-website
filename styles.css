@@ -190,6 +190,67 @@ code {
   max-width: 520px;
   margin-bottom: 36px;
 }
+.hero-install-prompt {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  max-width: 540px;
+  text-align: left;
+}
+.hero-install-prompt .prompt-badge {
+  display: inline-block;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hero-install-prompt p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.hero-install-prompt p strong {
+  color: var(--text-bright);
+}
+.hero-install-prompt .prompt-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.hero-install-prompt .prompt-box code {
+  background: transparent;
+  color: #a1a1aa;
+  padding: 0;
+  font-size: 0.82rem;
+}
+.hero-install-prompt .prompt-box .copy-btn {
+  background: rgba(255,255,255,0.05);
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.hero-install-prompt .prompt-box .copy-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-bright);
+}
+
 .hero-actions {
   display: flex;
   gap: 14px;
