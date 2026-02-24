@@ -1,61 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
-  <defs>
-    <!-- Claw Gradient: Aggressive Cyber Orange/Red -->
-    <linearGradient id="clawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f43f5e" />
-      <stop offset="100%" stop-color="#fb923c" />
-    </linearGradient>
-    
-    <!-- Coin Gradient: Safe Compliance Green -->
-    <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#059669" />
-    </linearGradient>
+  <!-- Left Antenna -->
+  <path d="M 43 25 Q 25 5 10 15" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+  <!-- Right Antenna -->
+  <path d="M 57 25 Q 75 5 90 15" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Left Legs -->
+  <path d="M 40 45 Q 28 45 22 53" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 40 55 Q 30 55 25 65" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 40 65 Q 32 65 28 75" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
 
-    <!-- Scan Line Gradient -->
-    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(16,185,129,0)" />
-      <stop offset="50%" stop-color="rgba(16,185,129,0.5)" />
-      <stop offset="100%" stop-color="rgba(16,185,129,0)" />
-    </linearGradient>
-    
-    <clipPath id="coinClip">
-      <circle cx="65" cy="45" r="18"/>
-    </clipPath>
-  </defs>
+  <!-- Right Legs -->
+  <path d="M 60 45 Q 72 45 78 53" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 60 55 Q 70 55 75 65" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 60 65 Q 68 65 72 75" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
 
-  <g transform="translate(5, 5) scale(0.9)">
-    <!-- THE STABLECOIN (Being monitored/held) -->
-    <!-- Glowing outer ring -->
-    <circle cx="65" cy="45" r="22" fill="none" stroke="url(#coinGrad)" stroke-width="2" opacity="0.4" stroke-dasharray="4 2"/>
-    <!-- Coin Body -->
-    <circle cx="65" cy="45" r="18" fill="url(#coinGrad)"/>
-    <!-- Inner Dollar/Stablecoin Tech Symbol -->
-    <path d="M65 33 L65 57 M60 40 C60 36 70 36 70 42 C70 47 60 48 60 53 C60 59 70 59 70 55" stroke="#ecfdf5" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <!-- Cyber Scan Line over the coin -->
-    <rect x="43" y="23" width="44" height="44" fill="url(#scanGrad)" opacity="0.5" clip-path="url(#coinClip)">
-      <animate attributeName="y" values="23; 67; 23" dur="3s" repeatCount="indefinite" />
-    </rect>
+  <!-- Let's adjust Left Claw (Holding AML) -->
+  <path d="M 38 42 C 20 20, 5 35, 15 50 C 25 65, 30 55, 38 42 Z" fill="#ef4444"/>
+  <path d="M 15 50 C 5 60, -5 45, 8 30 C 15 20, 25 35, 38 42" fill="none" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Right Claw (Empty/Open) -->
+  <path d="M 62 42 C 80 20, 95 35, 85 50 C 75 65, 70 55, 62 42 Z" fill="#ef4444"/>
+  <path d="M 85 50 C 95 60, 105 45, 92 30 C 85 20, 75 35, 62 42" fill="none" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
 
-    <!-- THE CYBER LOBSTER CLAW -->
-    <!-- Lower/Smaller Pincer -->
-    <path d="M20 95 C 35 85, 55 80, 75 75 C 85 72, 95 80, 85 85 C 70 90, 50 95, 20 95 Z" fill="url(#clawGrad)"/>
-    
-    <!-- Upper/Larger Pincer -->
-    <path d="M10 95 C 10 60, 25 25, 60 10 C 80 0, 95 15, 90 30 C 85 40, 75 35, 65 30 C 50 20, 35 40, 30 65 C 28 80, 20 95, 10 95 Z" fill="url(#clawGrad)"/>
-    
-    <!-- Joint/Hinge cyber detailing -->
-    <circle cx="25" cy="85" r="12" fill="#be123c"/>
-    <circle cx="25" cy="85" r="6" fill="#f43f5e"/>
-    <!-- Screws/nodes on hinge -->
-    <circle cx="25" cy="77" r="1.5" fill="#fecdd3"/>
-    <circle cx="25" cy="93" r="1.5" fill="#fecdd3"/>
-    <circle cx="17" cy="85" r="1.5" fill="#fecdd3"/>
-    <circle cx="33" cy="85" r="1.5" fill="#fecdd3"/>
-    
-    <!-- Tech/Cyber line detailing on claw -->
-    <path d="M20 65 Q 40 30 65 18" fill="none" stroke="#fda4af" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
-    <circle cx="65" cy="18" r="2" fill="#fda4af"/>
-    <path d="M35 82 Q 55 77 75 75" fill="none" stroke="#fda4af" stroke-width="1.5" opacity="0.6"/>
+  <!-- AML Block inside Left Claw -->
+  <g transform="translate(4, 34) rotate(-20)">
+    <rect x="0" y="0" width="28" height="18" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1.5" opacity="0.95"/>
+    <text x="3" y="13" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="10" fill="#10b981">AML</text>
   </g>
+
+  <!-- Lobster Body -->
+  <path d="M 40 30 C 40 15, 60 15, 60 30 C 65 45, 65 55, 60 70 C 60 80, 40 80, 40 70 C 35 55, 35 45, 40 30 Z" fill="#ef4444"/>
+  
+  <!-- Lobster Back/Armor Segments -->
+  <path d="M 40 45 L 60 45" stroke="#b91c1c" stroke-width="2" opacity="0.5"/>
+  <path d="M 38 55 L 62 55" stroke="#b91c1c" stroke-width="2" opacity="0.5"/>
+  <path d="M 39 65 L 61 65" stroke="#b91c1c" stroke-width="2" opacity="0.5"/>
+  <path d="M 42 75 L 58 75" stroke="#b91c1c" stroke-width="2" opacity="0.5"/>
+
+  <!-- Tail Fin -->
+  <path d="M 42 75 C 42 90, 30 95, 30 95 C 40 92, 50 85, 50 85 C 50 85, 60 92, 70 95 C 70 95, 58 90, 58 75 Z" fill="#dc2626"/>
+
+  <!-- Eyes -->
+  <circle cx="45" cy="26" r="2.5" fill="#facc15"/>
+  <circle cx="55" cy="26" r="2.5" fill="#facc15"/>
+  <circle cx="45" cy="26" r="1" fill="#000"/>
+  <circle cx="55" cy="26" r="1" fill="#000"/>
+
 </svg>
