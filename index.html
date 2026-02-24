@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMLClaw | LLM-Native Crypto Compliance Toolkit</title>
+  <meta name="description" content="An open-source, LLM-native toolkit for automated Crypto AML investigations, rule-engine configuration, and Continuous Risk Monitoring.">
+  <meta property="og:title" content="AMLClaw — LLM-Native Crypto Compliance">
+  <meta property="og:description" content="Empower your AI agents with enterprise-grade AML investigations and real-time risk monitoring for blockchain addresses.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L4 6v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V6l-8-4z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        AML<span class="logo-accent">Claw</span>
+      </a>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/amlclaw/amlclaw" target="_blank" class="btn-ghost">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <canvas id="network-canvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Open Source · LLM-Native · Zero Lock-in
+      </div>
+      <h1 class="hero-title">Predictive Compliance<br>for <span class="gradient-text">Autonomous Agents</span></h1>
+      <p class="hero-sub">AMLClaw is an open-source skill pack for LLM-powered agents. Clone it, configure your rules, and empower your AI to investigate blockchain addresses with enterprise-grade AML methodology.</p>
+      <div class="hero-actions">
+        <a href="#install" class="btn-primary">
+          Get Started
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://github.com/amlclaw/amlclaw" target="_blank" class="btn-secondary">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Agent Skills</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Hop Graph Depth</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Jurisdictions</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="graph-demo">
+        <div class="gnode gnode-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V6l-8-4z"/></svg>
+          <span>TARGET</span>
+        </div>
+        <div class="gnode gnode-risk n1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>SANCTION</span>
+        </div>
+        <div class="gnode gnode-warn n2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>MIXER</span>
+        </div>
+        <div class="gnode gnode-safe n3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          <span>CEX</span>
+        </div>
+        <div class="gnode gnode-risk n4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>HACKER</span>
+        </div>
+        <svg class="graph-edges" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <line x1="200" y1="150" x2="320" y2="60" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+          <line x1="200" y1="150" x2="80" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+          <line x1="200" y1="150" x2="350" y2="230" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+          <line x1="200" y1="150" x2="60" y2="240" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow Strip -->
+  <div class="workflow-strip">
+    <div class="workflow-inner">
+      <div class="wf-step">
+        <span class="wf-num">01</span>
+        <div class="wf-text">
+          <strong>Define Rules</strong>
+          <span>Generate your <code>rules.json</code> from FATF, MAS, VARA docs</span>
+        </div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step">
+        <span class="wf-num">02</span>
+        <div class="wf-text">
+          <strong>Fetch Graph</strong>
+          <span>Pull 1–5 hop fund flow graph via TrustIn API</span>
+        </div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step">
+        <span class="wf-num">03</span>
+        <div class="wf-text">
+          <strong>AI Evaluation</strong>
+          <span>LLM cross-references graph paths against rules</span>
+        </div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step">
+        <span class="wf-num">04</span>
+        <div class="wf-text">
+          <strong>Audit Report</strong>
+          <span>Get a professional Markdown compliance report in seconds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">Agent Skills</div>
+        <h2 class="section-title">Two powerful modules.<br>One seamless pipeline.</h2>
+        <p class="section-sub">Install once. Your AI inherits enterprise compliance capabilities instantly.</p>
+      </div>
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="skill-card skill-generator">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="skill-tag">aml-rule-generator</div>
+          <h3>AML Rule Generator</h3>
+          <p>Reads global regulatory documents — FATF 40 Recommendations, MAS DPT Notices, VARA frameworks — and synthesizes localized, machine-readable <code>rules.json</code> policies.</p>
+          <ul class="skill-features">
+            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Singapore MAS / Hong Kong SFC / Dubai VARA</li>
+            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Zero-tolerance CFT enforcement logic</li>
+            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tier-based risk actions (Freeze / EDD / Review)</li>
+          </ul>
+          <div class="skill-dir"><code>./aml-rule-generator/</code></div>
+        </div>
+        <!-- Skill 2 -->
+        <div class="skill-card skill-screening">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3l2 2"/></svg>
+          </div>
+          <div class="skill-tag">aml-address-screening</div>
+          <h3>Address Screening <span class="badge-kya">KYA</span></h3>
+          <p>Deep-scans a blockchain wallet up to 5 hops, mathematically maps fund flows, evaluates exposure against your <code>rules.json</code>, and outputs a professional Markdown Audit Report.</p>
+          <ul class="skill-features">
+            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 5-hop bidirectional graph traversal</li>
+            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Automated evidence tracing (A ——$——> B)</li>
+            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> LLM-generated compliance reports</li>
+          </ul>
+          <div class="skill-dir"><code>./aml-address-screening/</code></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">Architecture</div>
+        <h2 class="section-title">Designed for AI agents.<br>Not just humans.</h2>
+      </div>
+      <div class="arch-grid">
+        <div class="arch-card">
+          <div class="arch-num">01</div>
+          <h4>Standard SKILL.md Interface</h4>
+          <p>Each module exposes a <code>SKILL.md</code> file that acts as an AI-readable instruction card. Your LLM agent automatically discovers what the skill does and how to invoke it.</p>
+        </div>
+        <div class="arch-card">
+          <div class="arch-num">02</div>
+          <h4>Python Data Pipeline</h4>
+          <p>Lightweight Python scripts handle the heavy lifting — fetching blockchain graphs via API, extracting risk-relevant paths, and compiling the data into a context-optimized JSON file.</p>
+        </div>
+        <div class="arch-card">
+          <div class="arch-num">03</div>
+          <h4>LLM as the Evaluation Engine</h4>
+          <p>The LLM agent reads the condensed risk data and your <code>rules.json</code>, applies rule logic internally, and generates a structured compliance report — no backend server needed.</p>
+        </div>
+        <div class="arch-card">
+          <div class="arch-num">04</div>
+          <h4>Zero Vendor Lock-in</h4>
+          <p>Works with Claude Code, OpenClaw, Cursor, or any filesystem-aware LLM agent. Your rules are a local JSON file — you own your compliance policy completely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation -->
+  <section id="install" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">Installation</div>
+        <h2 class="section-title">Up and running in<br>under two minutes.</h2>
+      </div>
+      <div class="install-steps">
+        <div class="install-step">
+          <div class="install-step-header">
+            <span class="install-step-num">1</span>
+            <h4>Clone into your workspace</h4>
+          </div>
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-code="git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw">Copy</button>
+            </div>
+            <pre><code>git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw</code></pre>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="install-step-header">
+            <span class="install-step-num">2</span>
+            <h4>Install Python dependencies</h4>
+          </div>
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-code="pip install -r skills/amlclaw/aml-address-screening/requirements.txt">Copy</button>
+            </div>
+            <pre><code>pip install -r skills/amlclaw/aml-address-screening/requirements.txt</code></pre>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="install-step-header">
+            <span class="install-step-num">3</span>
+            <h4>Configure your API key</h4>
+          </div>
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-code="cp skills/amlclaw/.env.example .env&#10;# Edit .env and add your TRUSTIN_API_KEY">Copy</button>
+            </div>
+            <pre><code>cp skills/amlclaw/.env.example .env
+<span class="code-comment"># Edit .env and add your TRUSTIN_API_KEY</span></code></pre>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="install-step-header">
+            <span class="install-step-num">4</span>
+            <h4>Start your agent and prompt it</h4>
+          </div>
+          <div class="code-block prompt-block">
+            <div class="code-header">
+              <span class="code-lang">prompt</span>
+            </div>
+            <pre><code><span class="code-comment"># Example agent prompt:</span>
+Use the AML Address Screening skill to investigate Tron address 
+<span class="code-hl">TGE94jU39ithtHbrYAQJRTcvv785riPLdy</span> against our rules.json. 
+Check inflows AND outflows up to 5 hops, then produce a 
+full compliance report.</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jurisdictions -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-badge">Compliance Coverage</div>
+        <h2 class="section-title">Built-in regulatory<br>reference library.</h2>
+        <p class="section-sub">Pre-loaded with official guidance from major crypto regulators. Generate jurisdiction-specific rule sets instantly.</p>
+      </div>
+      <div class="juris-grid">
+        <div class="juris-card">
+          <div class="juris-flag">🇸🇬</div>
+          <h4>Singapore</h4>
+          <p>MAS DPT Notice, Payment Services Act risk matrix</p>
+          <span class="juris-tag">MAS</span>
+        </div>
+        <div class="juris-card">
+          <div class="juris-flag">🇭🇰</div>
+          <h4>Hong Kong</h4>
+          <p>SFC VASP licensing framework and AML requirements</p>
+          <span class="juris-tag">SFC</span>
+        </div>
+        <div class="juris-card">
+          <div class="juris-flag">🇦🇪</div>
+          <h4>Dubai</h4>
+          <p>VARA Virtual Asset Regulatory Authority standards</p>
+          <span class="juris-tag">VARA</span>
+        </div>
+        <div class="juris-card">
+          <div class="juris-flag">🌐</div>
+          <h4>Global FATF</h4>
+          <p>40 Recommendations, Travel Rule, VASP Guidance 2021–2025</p>
+          <span class="juris-tag">FATF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-inner">
+      <h2>Start Screening in Minutes</h2>
+      <p>Open-source, LLM-native, and built for the next generation of autonomous compliance agents.</p>
+      <div class="cta-actions">
+        <a href="https://github.com/amlclaw/amlclaw" target="_blank" class="btn-primary">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          View on GitHub
+        </a>
+        <a href="#install" class="btn-outline">Read the Docs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L4 6v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V6l-8-4z"/>
+          </svg>
+          AML<span class="logo-accent">Claw</span>
+        </a>
+        <p>Open-source LLM toolkit for automated blockchain AML investigations.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Project</h5>
+          <a href="https://github.com/amlclaw/amlclaw" target="_blank">GitHub</a>
+          <a href="https://github.com/amlclaw/amlclaw/issues" target="_blank">Issues</a>
+          <a href="https://github.com/amlclaw/amlclaw/blob/main/README.md" target="_blank">README</a>
+        </div>
+        <div class="footer-col">
+          <h5>Regulatory References</h5>
+          <a href="#">FATF 40 Recommendations</a>
+          <a href="#">MAS DPT Notice</a>
+          <a href="#">VARA Framework</a>
+        </div>
+        <div class="footer-col">
+          <h5>Skills</h5>
+          <a href="#skills">Rule Generator</a>
+          <a href="#skills">Address Screening</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AMLClaw — Released under the MIT License</span>
+      <span>Built for LLM Agents</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
