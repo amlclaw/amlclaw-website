@@ -113,3 +113,63 @@ document.querySelectorAll('.skill-card, .arch-card, .juris-card, .install-step')
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
+
+// ── Terminal Demo Typing Animation ──────────────────────
+const initTerminal = (termId) => {
+  const container = document.getElementById(termId);
+  if (!container) return;
+  
+  const typingSpan = container.querySelector('.typing');
+  const fullText = typingSpan.getAttribute('data-text');
+  const outputBlock = container.querySelector('.output-line');
+  
+  typingSpan.textContent = '';
+  outputBlock.classList.add('hidden');
+  typingSpan.classList.add('typing');
+  
+  let i = 0;
+  const typeChar = () => {
+    if (i < fullText.length) {
+      typingSpan.textContent += fullText.charAt(i);
+      i++;
+      setTimeout(typeChar, Math.random() * 30 + 15); // Fast typing speed
+    } else {
+      setTimeout(() => {
+        typingSpan.classList.remove('typing'); // stop cursor blink
+        outputBlock.classList.remove('hidden');
+      }, 300);
+    }
+  };
+  
+  setTimeout(typeChar, 400);
+};
+
+document.querySelectorAll('.term-tab').forEach(tab => {
+  tab.addEventListener('click', (e) => {
+    // hide all contents
+    document.querySelectorAll('.term-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.term-tab').forEach(t => t.classList.remove('active'));
+    
+    // activate clicked tab
+    e.target.classList.add('active');
+    const targetId = 'term-' + e.target.getAttribute('data-term');
+    document.getElementById(targetId).classList.add('active');
+    
+    // trigger animation
+    initTerminal(targetId);
+  });
+});
+
+// Observer specifically for the terminal to initialize typing when scrolled into view
+const termObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.hasAttribute('data-init')) {
+      entry.target.setAttribute('data-init', 'true');
+      if (document.getElementById('term-claude')) {
+        initTerminal('term-claude');
+      }
+    }
+  });
+}, { threshold: 0.5 });
+const termDemo = document.querySelector('.terminal-demo');
+if (termDemo) termObserver.observe(termDemo);
