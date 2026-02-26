@@ -1,15 +1,24 @@
 /* ======================================================
-   AMLClaw Website - Interactive JavaScript
+   AMLClaw Website - Interactive JavaScript (V2)
    ====================================================== */
 
 // ── Copy-to-clipboard for code blocks ──────────────────
 document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const code = btn.getAttribute('data-code') || btn.closest('.code-block').querySelector('code').textContent;
+    const code = btn.getAttribute('data-code') || btn.closest('.code-block')?.querySelector('code')?.textContent || '';
     navigator.clipboard.writeText(code.trim()).then(() => {
-      btn.textContent = 'Copied!';
+      const originalContent = btn.innerHTML;
+      const isIconOnly = btn.classList.contains('copy-icon-btn');
+      if (!isIconOnly) {
+        btn.textContent = 'Copied!';
+      }
       btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      setTimeout(() => {
+        if (!isIconOnly) {
+          btn.textContent = 'Copy';
+        }
+        btn.classList.remove('copied');
+      }, 2000);
     });
   });
 });
@@ -107,55 +116,88 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.skill-card, .arch-card, .juris-card, .install-step').forEach(el => {
+document.querySelectorAll('.skill-card, .arch-card, .juris-card, .install-step, .feature-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
 
+// ── Scroll-triggered counter animation ──────────────────
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.hasAttribute('data-counted')) {
+      entry.target.setAttribute('data-counted', 'true');
+      const target = parseInt(entry.target.getAttribute('data-count'), 10);
+      if (isNaN(target)) return;
+
+      const duration = 1200;
+      const startTime = performance.now();
+
+      function updateCount(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        entry.target.textContent = current;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          entry.target.textContent = target;
+        }
+      }
+
+      requestAnimationFrame(updateCount);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => {
+  counterObserver.observe(el);
+});
+
 // ── Terminal Demo Typing Animation ──────────────────────
 const initTerminal = (termId) => {
   const container = document.getElementById(termId);
   if (!container) return;
-  
+
   const typingSpan = container.querySelector('.typing');
   const fullText = typingSpan.getAttribute('data-text');
   const outputBlock = container.querySelector('.output-line');
-  
+
   typingSpan.textContent = '';
   outputBlock.classList.add('hidden');
   typingSpan.classList.add('typing');
-  
+
   let i = 0;
   const typeChar = () => {
     if (i < fullText.length) {
       typingSpan.textContent += fullText.charAt(i);
       i++;
-      setTimeout(typeChar, Math.random() * 30 + 15); // Fast typing speed
+      setTimeout(typeChar, Math.random() * 30 + 15);
     } else {
       setTimeout(() => {
-        typingSpan.classList.remove('typing'); // stop cursor blink
+        typingSpan.classList.remove('typing');
         outputBlock.classList.remove('hidden');
       }, 300);
     }
   };
-  
+
   setTimeout(typeChar, 400);
 };
 
 document.querySelectorAll('.term-tab').forEach(tab => {
   tab.addEventListener('click', (e) => {
-    // hide all contents
-    document.querySelectorAll('.term-content').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.term-tab').forEach(t => t.classList.remove('active'));
-    
-    // activate clicked tab
+    const terminalDemo = e.target.closest('.terminal-demo');
+    terminalDemo.querySelectorAll('.term-content').forEach(c => c.classList.remove('active'));
+    terminalDemo.querySelectorAll('.term-tab').forEach(t => t.classList.remove('active'));
+
     e.target.classList.add('active');
     const targetId = 'term-' + e.target.getAttribute('data-term');
     document.getElementById(targetId).classList.add('active');
-    
-    // trigger animation
+
     initTerminal(targetId);
   });
 });
@@ -173,3 +215,34 @@ const termObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 const termDemo = document.querySelector('.terminal-demo');
 if (termDemo) termObserver.observe(termDemo);
+
+// ── Report Preview Tab Switching ────────────────────────
+document.querySelectorAll('.report-tab').forEach(tab => {
+  tab.addEventListener('click', (e) => {
+    const reportDemo = e.target.closest('.report-demo');
+    reportDemo.querySelectorAll('.report-content').forEach(c => c.classList.remove('active'));
+    reportDemo.querySelectorAll('.report-tab').forEach(t => t.classList.remove('active'));
+
+    e.target.classList.add('active');
+    const targetId = 'report-' + e.target.getAttribute('data-report');
+    document.getElementById(targetId).classList.add('active');
+  });
+});
+
+// ── Report Preview fade-in on scroll ────────────────────
+const reportObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+const reportDemo = document.querySelector('.report-demo');
+if (reportDemo) {
+  reportDemo.style.opacity = '0';
+  reportDemo.style.transform = 'translateY(24px)';
+  reportDemo.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  reportObserver.observe(reportDemo);
+}
