@@ -3,672 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMLClaw | LLM-Native Crypto Compliance Toolkit</title>
-  <meta name="description" content="An open-source, LLM-native toolkit for automated Crypto AML investigations, scenario-based screening, and continuous risk monitoring.">
-  <meta property="og:title" content="AMLClaw — LLM-Native Crypto Compliance">
-  <meta property="og:description" content="Empower your AI agents with enterprise-grade AML investigations and real-time risk monitoring for blockchain addresses.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>AMLClaw — AI-Powered Crypto AML Compliance</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="logo">
-        <img src="logo.svg" alt="AMLClaw Logo" class="logo-icon">
-        AML<span class="logo-accent">Claw</span>
-      </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#skills">Skills</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#install">Install</a>
-        <a href="https://github.com/amlclaw/amlclaw" target="_blank" class="btn-ghost">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-          GitHub
-        </a>
-      </div>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg">
-      <canvas id="network-canvas"></canvas>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Open Source · LLM-Native · Zero Lock-in
-        </div>
-        <span class="version-badge">v0.2.0</span>
-      </div>
-      <h1 class="hero-title">Predictive Compliance<br>for <span class="gradient-text">Autonomous Agents</span></h1>
-      <p class="hero-sub">AMLClaw is an open-source skill pack for LLM agents. V2 introduces scenario-based screening, pollution decay principles, and hop-tiered severity — giving your AI enterprise-grade compliance across 6 screening scenarios.</p>
-
-      <!-- Interactive Install Prompt -->
-      <div class="hero-install-prompt">
-        <div class="prompt-badge">Magic Install</div>
-        <p>Just tell your <strong>OpenClaw</strong> or <strong>Claude</strong> agent:</p>
-        <div class="prompt-box">
-          <code>"git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw"</code>
-          <button class="copy-btn copy-icon-btn" data-code='"git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw"'>
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
-      </div>
-
+    <div class="container">
+      <img src="logo.svg" alt="AMLClaw" class="hero-logo" />
+      <h1>AMLClaw</h1>
+      <p class="hero-subtitle">AI-Powered Crypto AML Compliance</p>
+      <p class="hero-desc">Screen addresses, generate rules, create policies.<br>Open source. Works out of the box.</p>
       <div class="hero-actions">
-        <a href="#install" class="btn-primary">
-          Read Docs
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://github.com/amlclaw/amlclaw" target="_blank" class="btn-secondary">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-          View on GitHub
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num" data-count="6">0</span><span class="stat-label">Scenarios</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-count="5">0</span><span class="stat-label">Hop Depth</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">Jurisdictions</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num" data-count="56">0</span><span class="stat-label">Rules</span></div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="graph-demo">
-        <div class="gnode gnode-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V6l-8-4z"/></svg>
-          <span>TARGET</span>
-        </div>
-        <div class="gnode gnode-risk n1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <span>SANCTION</span>
-        </div>
-        <div class="gnode gnode-warn n2">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>MIXER</span>
-        </div>
-        <div class="gnode gnode-safe n3">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-          <span>CEX</span>
-        </div>
-        <div class="gnode gnode-risk n4">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          <span>HACKER</span>
-        </div>
-        <svg class="graph-edges" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="grad-severe" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#ef4444" stop-opacity="0.3"/>
-            </linearGradient>
-            <linearGradient id="grad-high" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.2"/>
-            </linearGradient>
-            <linearGradient id="grad-low" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#10b981" stop-opacity="0.6"/>
-              <stop offset="100%" stop-color="#10b981" stop-opacity="0.2"/>
-            </linearGradient>
-          </defs>
-          <!-- Hop 1: TARGET → SANCTION (Severe) -->
-          <line x1="200" y1="150" x2="320" y2="60" stroke="url(#grad-severe)" stroke-width="2" stroke-dasharray="4,3"/>
-          <text x="268" y="96" fill="#ef4444" font-size="9" font-family="'JetBrains Mono', monospace" font-weight="600" opacity="0.9">Hop 1</text>
-          <!-- Hop 2: TARGET → MIXER (High) -->
-          <line x1="200" y1="150" x2="80" y2="60" stroke="url(#grad-high)" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <text x="118" y="96" fill="#f59e0b" font-size="9" font-family="'JetBrains Mono', monospace" font-weight="600" opacity="0.8">Hop 2</text>
-          <!-- Hop 3: TARGET → CEX (Low) -->
-          <line x1="200" y1="150" x2="350" y2="230" stroke="url(#grad-low)" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <text x="282" y="202" fill="#10b981" font-size="9" font-family="'JetBrains Mono', monospace" font-weight="600" opacity="0.7">Hop 3</text>
-          <!-- Hop 1: TARGET → HACKER (Severe) -->
-          <line x1="200" y1="150" x2="60" y2="240" stroke="url(#grad-severe)" stroke-width="2" stroke-dasharray="4,3"/>
-          <text x="112" y="208" fill="#ef4444" font-size="9" font-family="'JetBrains Mono', monospace" font-weight="600" opacity="0.9">Hop 1</text>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- Workflow Strip -->
-  <div class="workflow-strip">
-    <div class="workflow-inner">
-      <div class="wf-step">
-        <span class="wf-num">01</span>
-        <div class="wf-text">
-          <strong>Define Rules</strong>
-          <span>Generate your <code>rules.json</code> from FATF, MAS, VARA docs</span>
-        </div>
-      </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step">
-        <span class="wf-num">02</span>
-        <div class="wf-text">
-          <strong>Fetch Graph</strong>
-          <span>Pull 1–5 hop fund flow graph via TrustIn API</span>
-        </div>
-      </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step">
-        <span class="wf-num">03</span>
-        <div class="wf-text">
-          <strong>AI Evaluation</strong>
-          <span>LLM cross-references graph paths against rules</span>
-        </div>
-      </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step">
-        <span class="wf-num">04</span>
-        <div class="wf-text">
-          <strong>Audit Report</strong>
-          <span>Get a professional Markdown compliance report in seconds</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- V2 Feature Highlights -->
-  <section id="features" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-badge">V2 Features</div>
-        <h2 class="section-title">Smarter screening.<br>Deeper intelligence.</h2>
-        <p class="section-sub">Version 0.2.0 introduces four major capabilities for precision compliance.</p>
-      </div>
-      <div class="features-grid">
-        <!-- Feature 1: Scenario-Based Screening -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-          <h4>Scenario-Based Screening</h4>
-          <p>6 screening scenarios automatically filter rules by business context and direction. Each scenario targets specific risk categories.</p>
-          <div class="feature-scenarios">
-            <span class="scenario-tag">onboarding</span>
-            <span class="scenario-tag">deposit</span>
-            <span class="scenario-tag">withdrawal</span>
-            <span class="scenario-tag">cdd</span>
-            <span class="scenario-tag">monitoring</span>
-            <span class="scenario-tag scenario-tag-active">all</span>
-          </div>
-          <div class="feature-code">
-            <code>--scenario deposit --inflow-hops 5</code>
-          </div>
-        </div>
-        <!-- Feature 2: Pollution Decay Principle -->
-        <div class="feature-card">
-          <div class="feature-icon feature-icon-amber">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 17V9"/><path d="M18 13V5"/><path d="M8 21v-4"/><path d="M3 17v-2"/><path d="M23 13v-2"/></svg>
-          </div>
-          <h4>Pollution Decay Principle</h4>
-          <p>Risk severity attenuates with hop distance. Close-range exposure triggers maximum severity; distant connections reduce to proportional risk.</p>
-          <div class="decay-visual">
-            <div class="decay-row">
-              <span class="decay-label">Hop 1</span>
-              <div class="decay-bar decay-severe" style="width:100%"><span>Severe</span></div>
-            </div>
-            <div class="decay-row">
-              <span class="decay-label">Hop 2–3</span>
-              <div class="decay-bar decay-severe" style="width:80%"><span>Severe</span></div>
-            </div>
-            <div class="decay-row">
-              <span class="decay-label">Hop 4–5</span>
-              <div class="decay-bar decay-high" style="width:55%"><span>High</span></div>
-            </div>
-          </div>
-        </div>
-        <!-- Feature 3: Self-Tag Detection -->
-        <div class="feature-card">
-          <div class="feature-icon feature-icon-blue">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
-          <h4>Self-Tag Detection</h4>
-          <p>Evaluates the target address's own blockchain labels — sanctions, darknet, gambling — independent of path traversal. Critical for KYC onboarding.</p>
-          <div class="feature-code">
-            <code>"parameter": "target.tags.primary_category"</code>
-            <code>"operator": "equals"</code>
-            <code>"value": "Sanctioned Entity"</code>
-          </div>
-        </div>
-        <!-- Feature 4: Direction-Aware Rules -->
-        <div class="feature-card">
-          <div class="feature-icon feature-icon-green">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-          <h4>Direction-Aware Rules</h4>
-          <p>Rules independently target inflow (fund sources) or outflow (fund destinations). Withdrawal rules only scan outgoing paths; deposit rules focus on incoming.</p>
-          <div class="feature-directions">
-            <div class="direction-pill direction-in">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              inflow
-            </div>
-            <div class="direction-pill direction-out">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-              outflow
-            </div>
-          </div>
-          <div class="feature-code">
-            <code>"direction": "inflow" | "outflow"</code>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-badge">Agent Skills</div>
-        <h2 class="section-title">Two powerful modules.<br>One seamless pipeline.</h2>
-        <p class="section-sub">Install once. Your AI inherits enterprise compliance capabilities instantly.</p>
-      </div>
-      <div class="skills-grid">
-        <!-- Skill 1: Rule Generator -->
-        <div class="skill-card skill-generator">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <div class="skill-tag">aml-rule-generator</div>
-          <h3>AML Rule Generator</h3>
-          <p>Reads global regulatory documents — FATF 40 Recommendations, MAS DPT Notices, VARA frameworks — and synthesizes localized, machine-readable <code>rules.json</code> policies.</p>
-          <ul class="skill-features">
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 4 business scenario categories (Deposit, Withdrawal, CDD, Monitoring)</li>
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hop-tiered severity rules (Pollution Decay Principle)</li>
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Pre-built rulesets: SG (19), HK (18), Dubai (19) rules</li>
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> JSON Schema validation with TrustIn label cross-check</li>
-          </ul>
-          <div class="skill-dir"><code>./aml-rule-generator/</code></div>
-        </div>
-        <!-- Skill 2: Address Screening -->
-        <div class="skill-card skill-screening">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3l2 2"/></svg>
-          </div>
-          <div class="skill-tag">aml-address-screening</div>
-          <h3>Address Screening <span class="badge-kya">KYA</span></h3>
-          <p>Deep-scans a blockchain wallet up to 5 hops, mathematically maps fund flows, evaluates exposure against your <code>rules.json</code>, and outputs a professional Markdown Audit Report.</p>
-          <ul class="skill-features">
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 6 screening scenarios (onboarding, deposit, withdrawal, cdd, monitoring, all)</li>
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Direction + hop-based rule filtering</li>
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Target self-tag detection (DEP-SELF-*, WDR-SELF-*)</li>
-            <li><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Auto update notifications for skill users</li>
-          </ul>
-          <div class="skill-dir"><code>./aml-address-screening/</code></div>
-        </div>
+        <a href="https://github.com/amlclaw/amlclaw" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/amlclaw/amlclaw" class="btn btn-secondary">GitHub</a>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how-it-works" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-badge">Architecture</div>
-        <h2 class="section-title">Designed for AI agents.<br>Not just humans.</h2>
-      </div>
-      <div class="arch-grid">
-        <div class="arch-card">
-          <div class="arch-num">01</div>
-          <h4>Standard SKILL.md Interface</h4>
-          <p>Each module exposes a <code>SKILL.md</code> file that acts as an AI-readable instruction card. Your LLM agent automatically discovers what the skill does and how to invoke it.</p>
+  <section class="section">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Screen</h3>
+          <p>Screen blockchain addresses against compliance rules. Supports Tron, Ethereum, Bitcoin, Solana. Traces up to 5 hops of fund flow.</p>
         </div>
-        <div class="arch-card">
-          <div class="arch-num">02</div>
-          <h4>Python Data Pipeline</h4>
-          <p>Lightweight Python scripts handle the heavy lifting — fetching blockchain graphs via API, scenario-based filtering of risk paths, and direction-aware evidence extraction with hop-tiered severity.</p>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3>Rules</h3>
+          <p>Generate machine-readable AML detection rules from 40+ international regulations. Manual input, document analysis, or web search.</p>
         </div>
-        <div class="arch-card">
-          <div class="arch-num">03</div>
-          <h4>LLM as the Evaluation Engine</h4>
-          <p>The LLM agent reads condensed risk data and your <code>rules.json</code>, applies hop-tiered severity reasoning and self-tag evaluation, and generates structured compliance reports with evidence chains.</p>
-        </div>
-        <div class="arch-card">
-          <div class="arch-num">04</div>
-          <h4>Zero Vendor Lock-in</h4>
-          <p>Works with Claude Code, OpenClaw, Cursor, or any filesystem-aware LLM agent. Built-in version checker notifies when skill updates are available. Your rules are a local JSON file — you own your compliance policy.</p>
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>Policy</h3>
+          <p>Create formal compliance policy documents from your ruleset. Professional templates for Singapore MAS, Hong Kong SFC, Dubai VARA.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sample Report Preview -->
-  <section id="report" class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-badge">Sample Output</div>
-        <h2 class="section-title">Professional audit reports.<br>Generated in seconds.</h2>
-        <p class="section-sub">Every screening produces a structured Markdown report with risk scores, evidence chains, and recommended actions.</p>
-      </div>
-      <div class="report-demo">
-        <div class="report-header">
-          <div class="term-dots"><i></i><i></i><i></i></div>
-          <div class="report-tabs">
-            <button class="report-tab active" data-report="deposit">Deposit Scenario</button>
-            <button class="report-tab" data-report="withdrawal">Withdrawal Scenario</button>
-          </div>
-        </div>
-        <div class="report-body">
-          <!-- Deposit Scenario -->
-          <div id="report-deposit" class="report-content active">
-            <div class="report-meta">
-              <span class="report-filename">reports/aml_screening_TGE94j...kQwF_20260226.md</span>
-            </div>
-            <div class="report-md">
-              <h3 class="report-h1">AML Screening Report</h3>
-              <div class="report-info-row">
-                <span class="report-tag">Tron</span>
-                <span class="report-addr">TGE94jU39it...riPLdy</span>
-                <span class="report-tag report-tag-scenario">deposit</span>
-                <span class="report-date">2026-02-26</span>
-              </div>
-              <h4 class="report-h2">Risk Assessment</h4>
-              <div class="report-risk-row">
-                <div class="report-risk-score risk-high">
-                  <span class="risk-label">Risk Score</span>
-                  <span class="risk-value">HIGH</span>
-                  <span class="risk-num">72 / 100</span>
-                </div>
-                <div class="report-risk-stat">
-                  <span class="risk-label">Triggered Rules</span>
-                  <span class="risk-value-sm">4 <span class="risk-of">of 19</span></span>
-                </div>
-                <div class="report-risk-stat">
-                  <span class="risk-label">Recommended Action</span>
-                  <span class="risk-value-sm risk-action-edd">EDD Required</span>
-                </div>
-              </div>
-              <h4 class="report-h2">Triggered Rules</h4>
-              <table class="report-table">
-                <thead><tr><th>Rule</th><th>Risk</th><th>Action</th><th>Evidence</th></tr></thead>
-                <tbody>
-                  <tr><td><code>DEP-002</code></td><td><span class="badge-severe">Severe</span></td><td>Freeze</td><td>Sanctioned Entity at Hop 1</td></tr>
-                  <tr><td><code>DEP-005</code></td><td><span class="badge-high">High</span></td><td>EDD</td><td>Mixer involvement at Hop 3</td></tr>
-                  <tr><td><code>DEP-SELF-001</code></td><td><span class="badge-high">High</span></td><td>Reject</td><td>Target tagged: Gambling</td></tr>
-                  <tr><td><code>DEP-008</code></td><td><span class="badge-medium">Medium</span></td><td>Review</td><td>High-risk jurisdiction (&gt;$50K)</td></tr>
-                </tbody>
-              </table>
-              <h4 class="report-h2">Evidence Chain</h4>
-              <div class="evidence-chain">
-                <div class="evidence-hop">
-                  <span class="hop-badge hop-severe">Hop 1</span>
-                  <span class="evidence-text">TARGET <span class="arrow">←$125,000—</span> <span class="hl-risk">Sanctioned Entity</span></span>
-                </div>
-                <div class="evidence-hop">
-                  <span class="hop-badge hop-severe">Hop 2</span>
-                  <span class="evidence-text"><span class="hl-risk">Sanctioned Entity</span> <span class="arrow">←$500,000—</span> Unknown Wallet</span>
-                </div>
-                <div class="evidence-hop">
-                  <span class="hop-badge hop-high">Hop 3</span>
-                  <span class="evidence-text">Unknown Wallet <span class="arrow">←$1.2M—</span> <span class="hl-warn">Tornado Cash (Mixer)</span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Withdrawal Scenario -->
-          <div id="report-withdrawal" class="report-content">
-            <div class="report-meta">
-              <span class="report-filename">reports/aml_screening_TGE94j...kQwF_20260226.md</span>
-            </div>
-            <div class="report-md">
-              <h3 class="report-h1">AML Screening Report</h3>
-              <div class="report-info-row">
-                <span class="report-tag">Tron</span>
-                <span class="report-addr">TGE94jU39it...riPLdy</span>
-                <span class="report-tag report-tag-scenario">withdrawal</span>
-                <span class="report-date">2026-02-26</span>
-              </div>
-              <h4 class="report-h2">Risk Assessment</h4>
-              <div class="report-risk-row">
-                <div class="report-risk-score risk-medium">
-                  <span class="risk-label">Risk Score</span>
-                  <span class="risk-value">MEDIUM</span>
-                  <span class="risk-num">45 / 100</span>
-                </div>
-                <div class="report-risk-stat">
-                  <span class="risk-label">Triggered Rules</span>
-                  <span class="risk-value-sm">2 <span class="risk-of">of 19</span></span>
-                </div>
-                <div class="report-risk-stat">
-                  <span class="risk-label">Recommended Action</span>
-                  <span class="risk-value-sm risk-action-review">Review</span>
-                </div>
-              </div>
-              <h4 class="report-h2">Triggered Rules</h4>
-              <table class="report-table">
-                <thead><tr><th>Rule</th><th>Risk</th><th>Action</th><th>Evidence</th></tr></thead>
-                <tbody>
-                  <tr><td><code>WDR-003</code></td><td><span class="badge-high">High</span></td><td>EDD</td><td>Darknet Market at Hop 2</td></tr>
-                  <tr><td><code>WDR-007</code></td><td><span class="badge-medium">Medium</span></td><td>Review</td><td>Unhosted wallet (&gt;$10K)</td></tr>
-                </tbody>
-              </table>
-              <h4 class="report-h2">Evidence Chain</h4>
-              <div class="evidence-chain">
-                <div class="evidence-hop">
-                  <span class="hop-badge hop-severe">Hop 1</span>
-                  <span class="evidence-text">TARGET <span class="arrow">—$85,000→</span> Intermediary Wallet</span>
-                </div>
-                <div class="evidence-hop">
-                  <span class="hop-badge hop-high">Hop 2</span>
-                  <span class="evidence-text">Intermediary <span class="arrow">—$85,000→</span> <span class="hl-risk">Darknet Market</span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Installation -->
-  <section id="install" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-badge">Installation</div>
-        <h2 class="section-title">Up and running in<br>under two minutes.</h2>
-      </div>
-      <div class="install-steps">
-        <div class="install-step">
-          <div class="install-step-header">
-            <span class="install-step-num">1</span>
-            <h4>Clone into your workspace</h4>
-          </div>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">bash</span>
-              <button class="copy-btn" data-code="git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw">Copy</button>
-            </div>
-            <pre><code>git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw</code></pre>
-          </div>
-        </div>
-        <div class="install-step">
-          <div class="install-step-header">
-            <span class="install-step-num">2</span>
-            <h4>Install Python dependencies</h4>
-          </div>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">bash</span>
-              <button class="copy-btn" data-code="pip install -r skills/amlclaw/aml-address-screening/requirements.txt">Copy</button>
-            </div>
-            <pre><code>pip install -r skills/amlclaw/aml-address-screening/requirements.txt</code></pre>
-          </div>
-        </div>
-        <div class="install-step">
-          <div class="install-step-header">
-            <span class="install-step-num">3</span>
-            <h4>Configure your API key</h4>
-          </div>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">bash</span>
-              <button class="copy-btn" data-code="cp skills/amlclaw/.env.example .env&#10;# Edit .env and add your TRUSTIN_API_KEY">Copy</button>
-            </div>
-            <pre><code>cp skills/amlclaw/.env.example .env
-<span class="code-comment"># Edit .env and add your TRUSTIN_API_KEY</span></code></pre>
-          </div>
-        </div>
-        <div class="install-step">
-          <div class="install-step-header">
-            <span class="install-step-num">4</span>
-            <h4>Start your agent and prompt it</h4>
-          </div>
-          <!-- Interactive Terminal Demo -->
-          <div class="terminal-demo">
-            <div class="terminal-header">
-              <div class="term-dots"><i></i><i></i><i></i></div>
-              <div class="term-tabs">
-                <button class="term-tab active" data-term="claude">Claude Code</button>
-                <button class="term-tab" data-term="openclaw">OpenClaw</button>
-                <button class="term-tab" data-term="screening">Screening</button>
-              </div>
-            </div>
-            <div class="terminal-body">
-              <div id="term-claude" class="term-content active">
-                <div class="prompt-line"><span class="user">user@agent:~$</span> <span class="typing" data-text='claude -p "Install AMLClaw skill pack from https://github.com/amlclaw/amlclaw"'></span></div>
-                <div class="output-line hidden">
-                  <span class="success">✔ SUCCESS:</span> SKILL.md found.<br>
-                  <span class="info">ℹ Loaded:</span> aml-address-screening<br>
-                  <span class="info">ℹ Loaded:</span> aml-rule-generator<br>
-                  🚀 Agent is now armed with Enterprise AML capabilities.
-                </div>
-              </div>
-              <div id="term-openclaw" class="term-content">
-                <div class="prompt-line"><span class="user">user@agent:~$</span> <span class="typing" data-text='git clone https://github.com/amlclaw/amlclaw.git ./skills/amlclaw'></span></div>
-                <div class="output-line hidden">
-                  Cloning into './skills/amlclaw'...<br>
-                  remote: Enumerating objects: 57, done.<br>
-                  remote: Counting objects: 100% (57/57), done.<br>
-                  Resolving deltas: 100% (4/4), done.<br>
-                  <span class="success">🎯 OpenClaw has successfully hot-loaded two new skills.</span>
-                </div>
-              </div>
-              <div id="term-screening" class="term-content">
-                <div class="prompt-line"><span class="user">user@agent:~$</span> <span class="typing" data-text='python3 skills/amlclaw/aml-address-screening/scripts/run_screening.py tron TGE94j...kQwF --scenario deposit'></span></div>
-                <div class="output-line hidden">
-                  <span class="info">ℹ Scenario:</span> deposit (Deposit rules, all directions)<br>
-                  <span class="success">✔ Graph fetched:</span> 87 nodes, 142 edges<br>
-                  <span class="success">✔ Risk paths:</span> 4 matches (deposit scenario)<br>
-                  <span class="success">✔ Report saved:</span> reports/aml_screening_TGE94j...kQwF_20260226.md<br>
-                  <br>
-                  <span class="risk-output">Risk: <span class="hl-high">HIGH (72/100)</span> | Rules Triggered: 4 | Action: <span class="hl-high">EDD Required</span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jurisdictions -->
+  <!-- Quick Start -->
   <section class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-badge">Compliance Coverage</div>
-        <h2 class="section-title">Built-in regulatory<br>reference library.</h2>
-        <p class="section-sub">Pre-loaded with official guidance from major crypto regulators. Generate jurisdiction-specific rule sets instantly.</p>
-      </div>
-      <div class="juris-grid">
-        <div class="juris-card">
-          <div class="juris-flag">🇸🇬</div>
-          <h4>Singapore</h4>
-          <p>MAS DPT Notice, Payment Services Act risk matrix</p>
-          <div class="juris-bottom">
-            <span class="juris-tag">MAS</span>
-            <span class="juris-rules-badge" data-count="19">19 Rules</span>
-          </div>
-        </div>
-        <div class="juris-card">
-          <div class="juris-flag">🇭🇰</div>
-          <h4>Hong Kong</h4>
-          <p>SFC VASP licensing framework and AML requirements</p>
-          <div class="juris-bottom">
-            <span class="juris-tag">SFC</span>
-            <span class="juris-rules-badge" data-count="18">18 Rules</span>
-          </div>
-        </div>
-        <div class="juris-card">
-          <div class="juris-flag">🇦🇪</div>
-          <h4>Dubai</h4>
-          <p>VARA Virtual Asset Regulatory Authority standards</p>
-          <div class="juris-bottom">
-            <span class="juris-tag">VARA</span>
-            <span class="juris-rules-badge" data-count="19">19 Rules</span>
-          </div>
-        </div>
-        <div class="juris-card">
-          <div class="juris-flag">🌐</div>
-          <h4>Global FATF</h4>
-          <p>40 Recommendations, Travel Rule, VASP Guidance 2021–2025</p>
-          <div class="juris-bottom">
-            <span class="juris-tag">FATF</span>
-            <span class="juris-rules-badge">5 Reference Docs</span>
-          </div>
-        </div>
+    <div class="container">
+      <h2>Quick Start</h2>
+      <div class="code-block">
+        <pre><code><span class="comment"># Clone and install</span>
+git clone https://github.com/amlclaw/amlclaw.git
+pip install requests python-dotenv
+
+<span class="comment"># Load a default ruleset</span>
+cp amlclaw/defaults/rulesets/singapore_mas.json ./rules.json
+
+<span class="comment"># Screen an address</span>
+python3 amlclaw/scripts/run_screening.py Tron &lt;ADDRESS&gt; --scenario deposit</code></pre>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="cta-glow"></div>
-    <div class="cta-inner">
-      <h2>Start Screening in Minutes</h2>
-      <p>Open-source, LLM-native, and built for the next generation of autonomous compliance agents.</p>
-      <div class="cta-actions">
-        <a href="https://github.com/amlclaw/amlclaw" target="_blank" class="btn-primary">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-          View on GitHub
-        </a>
-        <a href="#install" class="btn-outline">Read the Docs</a>
+  <!-- Out of the Box -->
+  <section class="section">
+    <div class="container">
+      <h2>Out of the Box</h2>
+      <p class="section-desc">Ships with 40+ regulations, 3 regional rulesets, 3 compliance policies.<br>Just add your AI agent and go.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Regulatory Documents</span></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Regional Rulesets</span></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Policy Templates</span></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Blockchains</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Free API Access</h2>
+      <p class="section-desc">No API key required. TrustIn KYA API provides desensitized blockchain data out of the box.<br>Want full unmasked data? Get a free key at <a href="https://trustin.info">trustin.info</a>.</p>
+    </div>
+  </section>
+
+  <!-- Ecosystem -->
+  <section class="section">
+    <div class="container">
+      <h2>Open Source Ecosystem</h2>
+      <div class="cards cards-two">
+        <div class="card">
+          <h3>🦅 AMLClaw Skill</h3>
+          <p>For AI agents. CLI-based, lightweight. Add to Claude Code, OpenClaw, or any agent framework. Ships as a skill with SKILL.md entry point.</p>
+          <a href="https://github.com/amlclaw/amlclaw" class="card-link">github.com/amlclaw/amlclaw →</a>
+        </div>
+        <div class="card">
+          <h3>🖥️ AMLClaw Dashboard</h3>
+          <p>Full web UI. Next.js application with visual screening, interactive flow graphs, and report generation. Self-hostable.</p>
+          <a href="https://github.com/amlclaw/amlclaw.com" class="card-link">github.com/amlclaw/amlclaw.com →</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <img src="logo.svg" alt="AMLClaw Logo" class="logo-icon">
-          AML<span class="logo-accent">Claw</span>
-        </a>
-        <p>Open-source LLM toolkit for automated blockchain AML investigations.</p>
-      </div>
+  <footer class="footer">
+    <div class="container">
+      <p>Built for the next generation of AI-powered compliance.</p>
       <div class="footer-links">
-        <div class="footer-col">
-          <h5>Project</h5>
-          <a href="https://github.com/amlclaw/amlclaw" target="_blank">GitHub</a>
-          <a href="https://github.com/amlclaw/amlclaw/issues" target="_blank">Issues</a>
-          <a href="https://github.com/amlclaw/amlclaw/blob/main/README.md" target="_blank">README</a>
-        </div>
-        <div class="footer-col">
-          <h5>Regulatory References</h5>
-          <a href="https://www.fatf-gafi.org/en/recommendations.html" target="_blank">FATF 40 Recommendations</a>
-          <a href="https://www.mas.gov.sg/regulation/notices/psn02" target="_blank">MAS DPT Notice</a>
-          <a href="https://github.com/amlclaw/amlclaw/tree/main/aml-rule-generator/references" target="_blank">VARA Framework</a>
-        </div>
-        <div class="footer-col">
-          <h5>Skills</h5>
-          <a href="#skills">Rule Generator</a>
-          <a href="#skills">Address Screening</a>
-        </div>
+        <a href="https://github.com/amlclaw/amlclaw">Skill Repo</a>
+        <a href="https://github.com/amlclaw/amlclaw.com">Dashboard Repo</a>
+        <a href="https://trustin.info">TrustIn API</a>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 AMLClaw — Released under the MIT License</span>
-      <span>Built for LLM Agents</span>
+      <p class="footer-license">MIT License</p>
     </div>
   </footer>
 
