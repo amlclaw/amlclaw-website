@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMLClaw — Your AI Compliance Team</title>
-  <meta name="description" content="Replace your entire compliance team with 5 AI agents. AMLClaw handles regulatory research, policy generation, rule engineering, address screening, and 24/7 monitoring — all open source, all free." />
+  <title>AMLClaw — Open-Source Crypto AML Screening Platform</title>
+  <meta name="description" content="KYA address screening, KYT transaction screening, batch screening and 24/7 monitoring — powered by the width.info compliance engine with server-side rulesets and transparent path evidence. Self-hosted, MIT-licensed, free." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -14,22 +14,22 @@
   <section class="hero">
     <div class="container">
       <img src="logo.svg" alt="AMLClaw" class="hero-logo" />
-      <h1>One Skill. Full Compliance.</h1>
-      <p class="hero-tagline">Give your AI agent the power of an entire compliance team.</p>
-      <p class="hero-desc">AMLClaw turns any AI coding agent into a compliance expert — read regulations, write policies, build detection rules, screen blockchain addresses. One sentence to install. Zero configuration. Open source.</p>
+      <h1>Open-Source Crypto AML Screening</h1>
+      <p class="hero-tagline">KYA address screening · KYT transaction screening · batch · 24/7 monitoring.</p>
+      <p class="hero-desc">AMLClaw packages professional on-chain AML screening into a self-hostable web platform. Rulesets run server-side on the width.info engine — Sanctions, Cybercrime, Gambling, Public Freezing Actions and more — with multi-hop fund tracing, per-path evidence, and a fund-attribution score (资金占比评分) returned by the API itself. No black box, no local rule maintenance, no database.</p>
       <div class="hero-install">
-        <code>Tell your AI agent: "Search GitHub for amlclaw and install it"</code>
+        <code>git clone https://github.com/amlclaw/amlclaw.com && cd amlclaw.com && npm install && npm run dev</code>
       </div>
       <div class="hero-actions">
-        <a href="https://github.com/amlclaw/amlclaw" class="btn btn-primary">View on GitHub</a>
-        <a href="https://github.com/amlclaw/amlclaw.com" class="btn btn-secondary">Try Dashboard</a>
+        <a href="https://github.com/amlclaw/amlclaw.com" class="btn btn-primary">View on GitHub</a>
+        <a href="https://width.info/api-keys" class="btn btn-secondary">Get a Free API Key</a>
       </div>
       <div class="stats-bar">
-        <div class="stat-item"><span class="stat-num">40+</span><span class="stat-label">Regulations</span></div>
+        <div class="stat-item"><span class="stat-num">KYA+KYT</span><span class="stat-label">Screening Modes</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-num">1</span><span class="stat-label">Sentence Install</span></div>
+        <div class="stat-item"><span class="stat-num">50</span><span class="stat-label">Items / Batch</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-num">$0</span><span class="stat-label">License Fee</span></div>
+        <div class="stat-item"><span class="stat-num">$0</span><span class="stat-label">MIT License</span></div>
         <div class="stat-divider"></div>
         <div class="stat-item"><span class="stat-num">5 min</span><span class="stat-label">Setup</span></div>
       </div>
@@ -39,67 +39,67 @@
   <!-- Problem -->
   <section class="section section-alt">
     <div class="container">
-      <h2>You're Still Paying Humans to Read PDFs?</h2>
-      <p class="section-desc">In 2026, most crypto compliance still runs on lawyers, spreadsheets, and hope.</p>
+      <h2>Still Screening Addresses One at a Time?</h2>
+      <p class="section-desc">In 2026, most crypto compliance still runs on black-box scores, manual copy-paste, and hope.</p>
       <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-icon">💸</div>
-          <h3>$500K–$1M/year</h3>
-          <p>A compliance team costs more than most startups raise in their seed round. 3-5 full-time hires — before you write a single line of code.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🐌</div>
-          <h3>4 Weeks to Write One Policy</h3>
-          <p>Your lawyer reads a regulation PDF. Summarizes it. Drafts a policy. Reviews it. Revises it. Four weeks later, you have one document. For one jurisdiction.</p>
-        </div>
         <div class="problem-card">
           <div class="problem-icon">🔒</div>
           <h3>"Trust Our Score"</h3>
-          <p>Vendor gives you a number. You ask why. "Proprietary algorithm." Try explaining <em>that</em> to MAS or SFC during an audit.</p>
+          <p>The vendor gives you a number. You ask why. "Proprietary algorithm." Try explaining <em>that</em> to a regulator during an audit — or proving which funds were actually risky.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🐌</div>
+          <h3>Manual, Address by Address</h3>
+          <p>Paste one address, wait for the trace, copy-paste the report, repeat for the next fifty. Batch screening shouldn't require a spreadsheet and a Friday night.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📴</div>
+          <h3>No Continuous Monitoring</h3>
+          <p>You screen an address today. It gets frozen tomorrow. Nobody knows — because nothing re-checks it, and nothing re-checks its counterparties.</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">🙏</div>
-          <h3>The "We'll Deal With It Later" Plan</h3>
-          <p>80% of crypto startups skip compliance because they can't afford it. Then they get a regulatory notice. Then they hire a team in panic mode at 3x the cost.</p>
+          <h3>Compliance Debt</h3>
+          <p>One-off screens don't build an audit trail. Regulators want evidence chains, history, and a defensible verdict — not a screenshot of a score.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Five AI Agents -->
+  <!-- Modules -->
   <section class="section">
     <div class="container">
-      <h2>What Your Agent Can Do With AMLClaw</h2>
-      <p class="section-desc">Install one skill. Unlock the entire compliance pipeline.</p>
+      <h2>Five Modules. One Compliance Desk.</h2>
+      <p class="section-desc">From a single address to a portfolio of transactions — the whole pipeline runs on the width.info V3 engine.</p>
       <div class="pipeline">
         <div class="agent-card">
           <div class="agent-number">01</div>
-          <h3>Read Regulations</h3>
-          <p>40+ international regulations pre-loaded — FATF, MAS, SFC, VARA, OFAC. Your agent knows every clause without reading a single PDF.</p>
+          <h3>KYA Address Screening</h3>
+          <p>Screen any Ethereum or Tron address with multi-hop fund tracing (0–5 hops each direction). Server-side rulesets flag Sanctions, Cybercrime, Gambling, Freezing Actions — with per-rule path evidence and an interactive fund-flow graph.</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">02</div>
-          <h3>Write Policies</h3>
-          <p>Generate structured compliance policy documents from regulations. Your lawyer's 2-week deliverable — in 2 minutes.</p>
+          <h3>KYT Transaction Screening</h3>
+          <p>Screen a transaction's source of funds (in), destination (out), or both. Chainalysis-aligned alerts with DIRECT/INDIRECT exposure, per-direction rulesets (KYT-IN / KYT-OUT), and full path evidence.</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">03</div>
-          <h3>Build Rules</h3>
-          <p>Translate policies into machine-executable JSON detection rules. No manual rule-writing. Every rule traceable to its source regulation.</p>
+          <h3>Batch Screening</h3>
+          <p>Paste up to 50 addresses or transaction hashes. Async mode with live progress, per-item risk + fund score, one-click full reports, and CSV export for your records.</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">04</div>
-          <h3>Screen Addresses</h3>
-          <p>Trace blockchain fund flows up to 5 hops. Cross-reference against rules. Generate audit-ready compliance reports.</p>
+          <h3>Address Monitoring</h3>
+          <p>Watch a watched address's <b>future</b> transfers — every new stablecoin transaction is KYT-screened on your schedule, with a full ledger and high-risk webhook alerts.</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">05</div>
-          <h3>Monitor 24/7</h3>
-          <p>Automated re-screening on schedule. Risk level changes trigger instant alerts. Works holidays. Doesn't ask for a raise.</p>
+          <h3>TX Monitoring</h3>
+          <p>Watch a transaction's from/to counterparty. Periodic KYA re-screening tracks the risk trend and alerts the moment an address gets tagged Sanctions or Freeze, or its level escalates.</p>
         </div>
       </div>
     </div>
@@ -109,36 +109,28 @@
   <section class="section section-alt" id="screenshots">
     <div class="container">
       <h2>See It In Action</h2>
-      <p class="section-desc">Watch the full compliance pipeline — from regulations to dashboard.</p>
+      <p class="section-desc">Screening, evidence, scoring and the dashboard — straight from the width.info API.</p>
       <div class="walkthrough">
         <div class="walkthrough-stage">
           <div class="walkthrough-step-info">
             <span class="walkthrough-step-number" id="wt-step-num">①</span>
-            <span class="walkthrough-step-text" id="wt-step-text">Upload Regulations</span>
+            <span class="walkthrough-step-text" id="wt-step-text">Address Screening</span>
           </div>
           <div class="walkthrough-frame">
             <div class="walkthrough-slides" id="wt-slides">
-              <div class="wt-slide active" data-index="0"><img src="documents.png" alt="Upload Regulations" /></div>
-              <div class="wt-slide" data-index="1"><img src="policies.png" alt="Generate Policy" /></div>
-              <div class="wt-slide" data-index="2"><img src="rules-1.png" alt="Build Rules" /></div>
-              <div class="wt-slide" data-index="3"><img src="rules-2.png" alt="Rule Details" /></div>
-              <div class="wt-slide" data-index="4"><img src="screening-1.png" alt="Screen Address" /></div>
-              <div class="wt-slide" data-index="5"><img src="screening-2.png" alt="Evidence Chains" /></div>
-              <div class="wt-slide" data-index="6"><img src="screening-graph.png" alt="View Graph" /></div>
-              <div class="wt-slide" data-index="7"><img src="dashboard.png" alt="Dashboard Overview" /></div>
+              <div class="wt-slide active" data-index="0"><img src="screening-1.png" alt="KYA Address Screening" /></div>
+              <div class="wt-slide" data-index="1"><img src="screening-2.png" alt="Evidence Chains" /></div>
+              <div class="wt-slide" data-index="2"><img src="screening-graph.png" alt="Fund-Flow Graph" /></div>
+              <div class="wt-slide" data-index="3"><img src="dashboard.png" alt="Dashboard Overview" /></div>
             </div>
           </div>
         </div>
         <div class="walkthrough-controls">
           <div class="walkthrough-dots" id="wt-dots">
-            <button class="wt-dot active" data-index="0"><span class="wt-dot-label">Documents</span></button>
-            <button class="wt-dot" data-index="1"><span class="wt-dot-label">Policies</span></button>
-            <button class="wt-dot" data-index="2"><span class="wt-dot-label">Rules</span></button>
-            <button class="wt-dot" data-index="3"><span class="wt-dot-label">Rule Detail</span></button>
-            <button class="wt-dot" data-index="4"><span class="wt-dot-label">Screening</span></button>
-            <button class="wt-dot" data-index="5"><span class="wt-dot-label">Evidence</span></button>
-            <button class="wt-dot" data-index="6"><span class="wt-dot-label">Graph</span></button>
-            <button class="wt-dot" data-index="7"><span class="wt-dot-label">Dashboard</span></button>
+            <button class="wt-dot active" data-index="0"><span class="wt-dot-label">Screening</span></button>
+            <button class="wt-dot" data-index="1"><span class="wt-dot-label">Evidence</span></button>
+            <button class="wt-dot" data-index="2"><span class="wt-dot-label">Graph</span></button>
+            <button class="wt-dot" data-index="3"><span class="wt-dot-label">Dashboard</span></button>
           </div>
           <div class="walkthrough-progress"><div class="walkthrough-progress-bar" id="wt-progress"></div></div>
         </div>
@@ -149,26 +141,26 @@
   <!-- Comparison Table -->
   <section class="section section-alt">
     <div class="container">
-      <h2>The Math Is Embarrassingly Simple</h2>
-      <p class="section-desc">One side costs a fortune. The other is free and better.</p>
+      <h2>Vendor Scores vs. Evidence</h2>
+      <p class="section-desc">One side gives you a number. The other gives you a case file.</p>
       <div class="table-wrapper">
         <table class="compare-table">
           <thead>
             <tr>
               <th></th>
-              <th class="col-old">Traditional Team</th>
+              <th class="col-old">Traditional Vendor</th>
               <th class="col-new">AMLClaw</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Cost</td><td class="col-old">$500K–$1M/year</td><td class="col-new highlight">Free (MIT License)</td></tr>
-            <tr><td>Setup Time</td><td class="col-old">3–6 months recruitment</td><td class="col-new highlight">5 minutes</td></tr>
-            <tr><td>Regulatory Coverage</td><td class="col-old">1–2 jurisdictions</td><td class="col-new highlight">40+ documents, 3 jurisdictions</td></tr>
-            <tr><td>Rule Updates</td><td class="col-old">Manual, weeks</td><td class="col-new highlight">AI-generated, minutes</td></tr>
-            <tr><td>Address Screening</td><td class="col-old">Manual, hours per address</td><td class="col-new highlight">Automated, &lt;5 min</td></tr>
-            <tr><td>Monitoring</td><td class="col-old">Periodic spot checks</td><td class="col-new highlight">24/7 automated</td></tr>
-            <tr><td>Audit Trail</td><td class="col-old">Scattered in emails/docs</td><td class="col-new highlight">Structured, immutable</td></tr>
-            <tr><td>Transparency</td><td class="col-old">Black-box vendor scores</td><td class="col-new highlight">Open source, every rule visible</td></tr>
+            <tr><td>Cost</td><td class="col-old">$100K+ / year</td><td class="col-new highlight">Free (MIT License)</td></tr>
+            <tr><td>Scoring</td><td class="col-old">Black-box "proprietary" score</td><td class="col-new highlight">Server-side rulesets + fund-attribution score, evidence for every point</td></tr>
+            <tr><td>Screening</td><td class="col-old">One address at a time</td><td class="col-new highlight">Single + batch (50/run, async)</td></tr>
+            <tr><td>Rules</td><td class="col-old">Fixed vendor rules</td><td class="col-new highlight">Your own ruleset IDs on width.info, or builtins</td></tr>
+            <tr><td>Monitoring</td><td class="col-old">None or add-on</td><td class="col-new highlight">Address + counterparty, scheduled, alerting</td></tr>
+            <tr><td>Hosting</td><td class="col-old">SaaS lock-in</td><td class="col-new highlight">Self-hosted, file-based, no database</td></tr>
+            <tr><td>Audit Trail</td><td class="col-old">Scattered in emails</td><td class="col-new highlight">History + CSV export + full reports</td></tr>
+            <tr><td>Transparency</td><td class="col-old">Closed source</td><td class="col-new highlight">Open source, every rule hit visible</td></tr>
           </tbody>
         </table>
       </div>
@@ -178,10 +170,13 @@
   <!-- Quick Start -->
   <section class="section">
     <div class="container">
-      <h2>Deploy Your Team in One Sentence</h2>
-      <p class="section-desc">Tell your AI agent:</p>
+      <h2>Deploy Your Compliance Desk in Five Minutes</h2>
+      <p class="section-desc">Clone, install, run, and paste your free width.info API key in Settings.</p>
       <div class="code-block code-block-featured">
-        <pre><code>Search GitHub for amlclaw and install it</code></pre>
+        <pre><code>git clone https://github.com/amlclaw/amlclaw.com
+cd amlclaw.com
+npm install
+npm run dev   # open http://localhost:3000</code></pre>
       </div>
     </div>
   </section>
@@ -190,23 +185,23 @@
   <section class="section section-alt">
     <div class="container">
       <h2>Day One Ready. Not Day Ninety.</h2>
-      <p class="section-desc">Traditional setup takes 3 months. AMLClaw ships with everything pre-loaded.</p>
+      <p class="section-desc">Professional screening out of the box — one API key, server-side everything.</p>
       <div class="value-grid">
         <div class="value-card">
-          <div class="value-num">40+</div>
-          <p>Regulatory documents already analyzed and indexed</p>
+          <div class="value-num">Server-side</div>
+          <p>Rulesets &amp; scoring run on the width.info engine — no local rule maintenance, always current</p>
         </div>
         <div class="value-card">
-          <div class="value-num">3</div>
-          <p>Jurisdiction rulesets ready to deploy — Singapore, Hong Kong, Dubai</p>
+          <div class="value-num">2+2</div>
+          <p>Screening modes (KYA / KYT) and monitoring modes (address / counterparty), plus batch</p>
         </div>
         <div class="value-card">
-          <div class="value-num">3</div>
-          <p>Compliance policy templates ready to submit to regulators</p>
+          <div class="value-num">50</div>
+          <p>Addresses or tx hashes per batch — async, live progress, CSV export</p>
         </div>
         <div class="value-card">
-          <div class="value-num">∞</div>
-          <p>Free blockchain data API — no key required, no rate limits on basic queries</p>
+          <div class="value-num">No DB</div>
+          <p>File-based storage, backup-friendly, deploy anywhere — even Docker</p>
         </div>
       </div>
     </div>
@@ -219,16 +214,16 @@
       <p class="section-desc">Two products. Both free. Both yours.</p>
       <div class="cards-two">
         <div class="card">
-          <div class="card-badge">CLI</div>
-          <h3>🦅 AMLClaw Skill</h3>
-          <p>For AI agents. Lightweight, CLI-based. Add to Claude Code, OpenClaw, or any agent framework. Ships as a skill with SKILL.md entry point.</p>
-          <a href="https://github.com/amlclaw/amlclaw" class="card-link">github.com/amlclaw/amlclaw →</a>
+          <div class="card-badge">Web UI</div>
+          <h3>🖥️ AMLClaw Platform</h3>
+          <p>KYA / KYT / batch screening and 24/7 monitoring in a self-hostable Next.js app. Bilingual (中文 / English), dark &amp; light themes, file-based storage.</p>
+          <a href="https://github.com/amlclaw/amlclaw.com" class="card-link">github.com/amlclaw/amlclaw.com →</a>
         </div>
         <div class="card">
-          <div class="card-badge">Web UI</div>
-          <h3>🖥️ AMLClaw Dashboard</h3>
-          <p>Full web application. Visual flow graphs, screening history, monitoring dashboard, report generation. Self-hostable Next.js app.</p>
-          <a href="https://github.com/amlclaw/amlclaw.com" class="card-link">github.com/amlclaw/amlclaw.com →</a>
+          <div class="card-badge">Skills</div>
+          <h3>🦅 AMLClaw Skills</h3>
+          <p>Agent-friendly skill pack for AI coding agents — address screening and compliance rule authoring as reusable skills.</p>
+          <a href="https://github.com/amlclaw/amlclaw" class="card-link">github.com/amlclaw/amlclaw →</a>
         </div>
       </div>
     </div>
@@ -237,11 +232,11 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-tagline">One skill. Full compliance. Give your AI agent the power of an entire team.</p>
+      <p class="footer-tagline">Open-source AML screening, powered by the width.info compliance engine.</p>
       <div class="footer-links">
-        <a href="https://github.com/amlclaw/amlclaw">Skill Repo</a>
-        <a href="https://github.com/amlclaw/amlclaw.com">Dashboard Repo</a>
-        <a href="https://trustin.info">TrustIn API</a>
+        <a href="https://github.com/amlclaw/amlclaw.com">Platform Repo</a>
+        <a href="https://github.com/amlclaw/amlclaw">Skills Repo</a>
+        <a href="https://width.info">width.info</a>
       </div>
       <p class="footer-license">MIT License · AMLClaw</p>
     </div>

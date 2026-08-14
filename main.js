@@ -30,14 +30,10 @@ document.querySelectorAll('.pipeline .pipeline-arrow').forEach((el, i) => {
 // Product Walkthrough
 (() => {
   const steps = [
-    { num: '①', text: 'Upload Regulations' },
-    { num: '②', text: 'Generate Policy' },
-    { num: '③', text: 'Build Rules' },
-    { num: '④', text: 'Rule Details' },
-    { num: '⑤', text: 'Screen Address' },
-    { num: '⑥', text: 'Evidence Chains' },
-    { num: '⑦', text: 'View Graph' },
-    { num: '⑧', text: 'Dashboard Overview' },
+    { num: '①', text: 'Address Screening (KYA)' },
+    { num: '②', text: 'Evidence Chains' },
+    { num: '③', text: 'Fund-Flow Graph' },
+    { num: '④', text: 'Dashboard Overview' },
   ];
   const DURATION = 4000;
   let current = 0;
