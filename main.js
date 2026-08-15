@@ -41,16 +41,18 @@ const I18N = {
   "m4.text": { zh: "监控地址\u201c加入监控之后\u201d发生的每一笔转账——超过设定金额的新交易自动做 KYT 查询，全量入台账一笔不漏，高风险命中立即触发 Webhook 告警。", en: "Watch a watched address's future transfers — every new stablecoin transaction is KYT-screened on your schedule, with a full ledger and high-risk webhook alerts." },
   "m5.title": { zh: "TX 监控", en: "TX Monitoring" },
   "m5.text": { zh: "盯防交易 from/to 对手方地址本身的风险变化。周期 KYA 复筛跟踪风险走势，一旦被打上制裁 / 冻结标签或风险等级升高，第一时间告警。", en: "Watch a transaction's from/to counterparty. Periodic KYA re-screening tracks the risk trend and alerts the moment an address gets tagged Sanctions or Freeze, or its level escalates." },
-  "wt.title": { zh: "看它怎么工作", en: "See It In Action" },
-  "wt.desc": { zh: "筛查、证据、评分与仪表盘——全部来自 width.info API 的真实返回。", en: "Screening, evidence, scoring and the dashboard — straight from the width.info API." },
-  "wt.alt1": { zh: "KYA 地址筛查", en: "KYA Address Screening" },
-  "wt.alt2": { zh: "证据链", en: "Evidence Chains" },
-  "wt.alt3": { zh: "资金流向图", en: "Fund-Flow Graph" },
-  "wt.alt4": { zh: "仪表盘总览", en: "Dashboard Overview" },
-  "wt1": { zh: "筛查", en: "Screening" },
-  "wt2": { zh: "证据", en: "Evidence" },
-  "wt3": { zh: "资金图", en: "Graph" },
-  "wt4": { zh: "仪表盘", en: "Dashboard" },
+  "how.title": { zh: "工作流程 · How It Works", en: "How It Works" },
+  "how.desc": { zh: "从提交到报告，每一步都由 width.info V3 引擎服务端完成。", en: "From submit to report — every step runs server-side on the width.info V3 engine." },
+  "how1.title": { zh: "提交筛查", en: "Submit a Screen" },
+  "how1.text": { zh: "粘贴地址（KYA）或交易哈希（KYT），选择筛查方向与参数（跳数、时间序列、CEX 免疫等），async 模式提交到 width.info。", en: "Paste an address (KYA) or transaction hash (KYT), pick the direction and parameters (hops, force time sequence, CEX immunity…), and submit in async mode to width.info." },
+  "how2.title": { zh: "服务端规则集", en: "Server-Side Rulesets" },
+  "how2.text": { zh: "制裁、恐怖融资、网络犯罪、赌博、司法冻结等规则集在 width.info 服务端运行，双向多跳追溯资金路径（0–5 跳），返回命中规则与敞口金额。", en: "Sanctions, TF, Cybercrime, Gambling, Freezing Actions and more run server-side on width.info — multi-hop fund tracing (0–5 hops each way) returns the matched rules and exposure amounts." },
+  "how3.title": { zh: "资金占比评分", en: "Fund-Attribution Score" },
+  "how3.text": { zh: "引擎按「方向 × 跳数 × 严重度 × 资金占比」返回 0–100 分与处置判定（放行 / 复核 / 尽调 / 拒绝）；SELFHIT、时间序列、CEX 免疫均由服务端处理。", en: "The engine returns a 0–100 score (direction × hops × severity × fund ratio) plus a verdict (accept / review / EDD / block). SELFHIT, time sequencing and CEX immunity are all handled server-side." },
+  "how4.title": { zh: "证据与报告", en: "Evidence & Report" },
+  "how4.text": { zh: "逐条规则命中证据、资金路径、可交互流向图与 Chainalysis 风格告警；完整报告自动存入历史，随时一键回看。", en: "Per-rule hit evidence, fund paths, an interactive flow graph and Chainalysis-style alerts. Full reports are saved to history for one-click recall." },
+  "how5.title": { zh: "批量与监控", en: "Batch & Monitoring" },
+  "how5.text": { zh: "批量筛查最多 50 条，async 并发出报告、支持 CSV 导出；地址 / TX 监控按计划定时复查，风险升高或新增制裁、冻结标签即触发告警。", en: "Batch-screening up to 50 items with async progress and CSV export; address / TX monitoring re-checks on schedule and alerts on escalation or new Sanctions/Freeze tags." },
   "cmp.title": { zh: "厂商评分 vs. 证据链", en: "Vendor Scores vs. Evidence" },
   "cmp.desc": { zh: "一边给你一个数字，另一边给你一份案件档案。", en: "One side gives you a number. The other gives you a case file." },
   "cmp.colOld": { zh: "传统厂商", en: "Traditional Vendor" },
@@ -90,27 +92,17 @@ const I18N = {
   "v3.text": { zh: "每批最多 50 个地址或交易哈希——async、实时进度、CSV 导出", en: "Addresses or tx hashes per batch — async, live progress, CSV export" },
   "v4.num": { zh: "无需 DB", en: "No DB" },
   "v4.text": { zh: "文件存储，备份友好，随处部署——甚至 Docker", en: "File-based storage, backup-friendly, deploy anywhere — even Docker" },
-  "eco.title": { zh: "开源生态", en: "Open Source Ecosystem" },
-  "eco.desc": { zh: "两个产品。都免费。都属于你。", en: "Two products. Both free. Both yours." },
+  "eco.title": { zh: "开源 · 免费", en: "Open Source · Free" },
+  "eco.desc": { zh: "整个平台开源，MIT 协议，代码属于你。", en: "The whole platform is open source, MIT-licensed — the code is yours." },
   "eco1.badge": { zh: "Web 平台", en: "Web UI" },
   "eco1.title": { zh: "🖥️ AMLClaw 平台", en: "🖥️ AMLClaw Platform" },
   "eco1.text": { zh: "KYA / KYT / 批量筛查与 7×24 监控，自托管 Next.js 应用。中英双语、深色/浅色主题、文件存储。", en: "KYA / KYT / batch screening and 24/7 monitoring in a self-hostable Next.js app. Bilingual (中文 / English), dark & light themes, file-based storage." },
-  "eco2.badge": { zh: "Skills", en: "Skills" },
-  "eco2.title": { zh: "🦅 AMLClaw Skills", en: "🦅 AMLClaw Skills" },
-  "eco2.text": { zh: "面向 AI 编码代理的技能包——地址筛查与合规规则编写，作为可复用技能提供。", en: "Agent-friendly skill pack for AI coding agents — address screening and compliance rule authoring as reusable skills." },
   "ft.tagline": { zh: "开源 AML 筛查，由 width.info 合规引擎驱动。", en: "Open-source AML screening, powered by the width.info compliance engine." },
   "ft.license": { zh: "MIT License · AMLClaw", en: "MIT License · AMLClaw" },
 };
 
 let lang = "zh";
 try { lang = localStorage.getItem("amlclaw-lang") === "en" ? "en" : "zh"; } catch { /* ignore */ }
-
-const walkthroughSteps = [
-  { num: "①", zh: "地址筛查 (KYA)", en: "Address Screening (KYA)" },
-  { num: "②", zh: "证据链", en: "Evidence Chains" },
-  { num: "③", zh: "资金流向图", en: "Fund-Flow Graph" },
-  { num: "④", zh: "仪表盘总览", en: "Dashboard Overview" },
-];
 
 /** Apply a language to the whole page (data-i18n texts, meta, toggle label). */
 function applyLang(next) {
@@ -129,14 +121,6 @@ function applyLang(next) {
   });
   const toggle = document.getElementById("lang-toggle");
   if (toggle) toggle.textContent = lang === "zh" ? "EN" : "中文";
-  // Refresh the walkthrough's current step (number + text), if running.
-  const stepNum = document.getElementById("wt-step-num");
-  const stepText = document.getElementById("wt-step-text");
-  if (stepText && typeof walkthroughCurrent === "number" && walkthroughCurrent >= 0) {
-    const step = walkthroughSteps[walkthroughCurrent];
-    if (stepNum) stepNum.textContent = step.num;
-    stepText.textContent = step[lang];
-  }
   try { localStorage.setItem("amlclaw-lang", lang); } catch { /* ignore */ }
 }
 
@@ -178,72 +162,3 @@ document.querySelectorAll('.pipeline .pipeline-arrow').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.1 + 0.15}s`;
   observer.observe(el);
 });
-
-// ─────────────────────────────────────────────────────────────
-// Product Walkthrough (bilingual steps)
-// ─────────────────────────────────────────────────────────────
-let walkthroughCurrent = -1;
-(() => {
-  const DURATION = 4000;
-  let current = 0;
-  let timer = null;
-  let startTime = 0;
-  let raf = null;
-
-  const slides = document.querySelectorAll('.wt-slide');
-  const dots = document.querySelectorAll('.wt-dot');
-  const stepNum = document.getElementById('wt-step-num');
-  const stepText = document.getElementById('wt-step-text');
-  const progressBar = document.getElementById('wt-progress');
-
-  if (!slides.length) return;
-
-  function goTo(index, skipAnim) {
-    slides[current]?.classList.remove('active');
-    dots[current]?.classList.remove('active');
-    current = index;
-    walkthroughCurrent = index;
-    slides[current]?.classList.add('active');
-    dots[current]?.classList.add('active');
-
-    // Animate step text
-    stepText.classList.add('fade-out');
-    setTimeout(() => {
-      stepNum.textContent = walkthroughSteps[current].num;
-      stepText.textContent = walkthroughSteps[current][lang];
-      stepText.classList.remove('fade-out');
-    }, skipAnim ? 0 : 200);
-
-    // Reset progress
-    startTime = Date.now();
-    progressBar.style.transition = 'none';
-    progressBar.style.width = '0%';
-  }
-
-  function tick() {
-    const elapsed = Date.now() - startTime;
-    const pct = Math.min((elapsed / DURATION) * 100, 100);
-    progressBar.style.width = pct + '%';
-    if (pct >= 100) {
-      goTo((current + 1) % slides.length);
-    }
-    raf = requestAnimationFrame(tick);
-  }
-
-  function startAuto() {
-    startTime = Date.now();
-    if (raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(tick);
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.dataset.index);
-      if (idx === current) return;
-      goTo(idx);
-    });
-  });
-
-  goTo(0, true);
-  startAuto();
-})();

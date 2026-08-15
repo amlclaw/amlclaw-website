@@ -109,34 +109,36 @@
     </div>
   </section>
 
-  <!-- Product Walkthrough -->
-  <section class="section section-alt" id="screenshots">
+  <!-- How It Works -->
+  <section class="section section-alt" id="how-it-works">
     <div class="container">
-      <h2 data-i18n="wt.title">看它怎么工作</h2>
-      <p class="section-desc" data-i18n="wt.desc">筛查、证据、评分与仪表盘——全部来自 width.info API 的真实返回。</p>
-      <div class="walkthrough">
-        <div class="walkthrough-stage">
-          <div class="walkthrough-step-info">
-            <span class="walkthrough-step-number" id="wt-step-num">①</span>
-            <span class="walkthrough-step-text" id="wt-step-text">地址筛查 (KYA)</span>
-          </div>
-          <div class="walkthrough-frame">
-            <div class="walkthrough-slides" id="wt-slides">
-              <div class="wt-slide active" data-index="0"><img src="screening-1.png" alt="" data-i18n-alt="wt.alt1" /></div>
-              <div class="wt-slide" data-index="1"><img src="screening-2.png" alt="" data-i18n-alt="wt.alt2" /></div>
-              <div class="wt-slide" data-index="2"><img src="screening-graph.png" alt="" data-i18n-alt="wt.alt3" /></div>
-              <div class="wt-slide" data-index="3"><img src="dashboard.png" alt="" data-i18n-alt="wt.alt4" /></div>
-            </div>
-          </div>
+      <h2 data-i18n="how.title">工作流程 · How It Works</h2>
+      <p class="section-desc" data-i18n="how.desc">从提交到报告，每一步都由 width.info V3 引擎服务端完成。</p>
+      <div class="problem-grid">
+        <div class="problem-card how-card">
+          <div class="problem-icon">①</div>
+          <h3 data-i18n="how1.title">提交筛查</h3>
+          <p data-i18n="how1.text">粘贴地址（KYA）或交易哈希（KYT），选择筛查方向与参数（跳数、时间序列、CEX 免疫等），async 模式提交到 width.info。</p>
         </div>
-        <div class="walkthrough-controls">
-          <div class="walkthrough-dots" id="wt-dots">
-            <button class="wt-dot active" data-index="0"><span class="wt-dot-label" data-i18n="wt1">筛查</span></button>
-            <button class="wt-dot" data-index="1"><span class="wt-dot-label" data-i18n="wt2">证据</span></button>
-            <button class="wt-dot" data-index="2"><span class="wt-dot-label" data-i18n="wt3">资金图</span></button>
-            <button class="wt-dot" data-index="3"><span class="wt-dot-label" data-i18n="wt4">仪表盘</span></button>
-          </div>
-          <div class="walkthrough-progress"><div class="walkthrough-progress-bar" id="wt-progress"></div></div>
+        <div class="problem-card how-card">
+          <div class="problem-icon">②</div>
+          <h3 data-i18n="how2.title">服务端规则集</h3>
+          <p data-i18n="how2.text">制裁、恐怖融资、网络犯罪、赌博、司法冻结等规则集在 width.info 服务端运行，双向多跳追溯资金路径（0–5 跳），返回命中规则与敞口金额。</p>
+        </div>
+        <div class="problem-card how-card">
+          <div class="problem-icon">③</div>
+          <h3 data-i18n="how3.title">资金占比评分</h3>
+          <p data-i18n="how3.text">引擎按「方向 × 跳数 × 严重度 × 资金占比」返回 0–100 分与处置判定（放行 / 复核 / 尽调 / 拒绝）；SELFHIT、时间序列、CEX 免疫均由服务端处理。</p>
+        </div>
+        <div class="problem-card how-card">
+          <div class="problem-icon">④</div>
+          <h3 data-i18n="how4.title">证据与报告</h3>
+          <p data-i18n="how4.text">逐条规则命中证据、资金路径、可交互流向图与 Chainalysis 风格告警；完整报告自动存入历史，随时一键回看。</p>
+        </div>
+        <div class="problem-card how-card">
+          <div class="problem-icon">⑤</div>
+          <h3 data-i18n="how5.title">批量与监控</h3>
+          <p data-i18n="how5.text">批量筛查最多 50 条，async 并发出报告、支持 CSV 导出；地址 / TX 监控按计划定时复查，风险升高或新增制裁、冻结标签即触发告警。</p>
         </div>
       </div>
     </div>
@@ -211,24 +213,16 @@ npm run dev   # 打开 http://localhost:3000</code></pre>
     </div>
   </section>
 
-  <!-- Open Source Ecosystem -->
+  <!-- Open Source -->
   <section class="section">
     <div class="container">
-      <h2 data-i18n="eco.title">开源生态</h2>
-      <p class="section-desc" data-i18n="eco.desc">两个产品。都免费。都属于你。</p>
-      <div class="cards-two">
-        <div class="card">
-          <div class="card-badge" data-i18n="eco1.badge">Web 平台</div>
-          <h3 data-i18n="eco1.title">🖥️ AMLClaw 平台</h3>
-          <p data-i18n="eco1.text">KYA / KYT / 批量筛查与 7×24 监控，自托管 Next.js 应用。中英双语、深色/浅色主题、文件存储。</p>
-          <a href="https://github.com/amlclaw/amlclaw.com" class="card-link">github.com/amlclaw/amlclaw.com →</a>
-        </div>
-        <div class="card">
-          <div class="card-badge" data-i18n="eco2.badge">Skills</div>
-          <h3 data-i18n="eco2.title">🦅 AMLClaw Skills</h3>
-          <p data-i18n="eco2.text">面向 AI 编码代理的技能包——地址筛查与合规规则编写，作为可复用技能提供。</p>
-          <a href="https://github.com/amlclaw/amlclaw" class="card-link">github.com/amlclaw/amlclaw →</a>
-        </div>
+      <h2 data-i18n="eco.title">开源 · 免费</h2>
+      <p class="section-desc" data-i18n="eco.desc">整个平台开源，MIT 协议，代码属于你。</p>
+      <div class="card">
+        <div class="card-badge" data-i18n="eco1.badge">Web 平台</div>
+        <h3 data-i18n="eco1.title">🖥️ AMLClaw 平台</h3>
+        <p data-i18n="eco1.text">KYA / KYT / 批量筛查与 7×24 监控，自托管 Next.js 应用。中英双语、深色/浅色主题、文件存储。</p>
+        <a href="https://github.com/amlclaw/amlclaw.com" class="card-link">github.com/amlclaw/amlclaw.com →</a>
       </div>
     </div>
   </section>
@@ -239,7 +233,6 @@ npm run dev   # 打开 http://localhost:3000</code></pre>
       <p class="footer-tagline" data-i18n="ft.tagline">开源 AML 筛查，由 width.info 合规引擎驱动。</p>
       <div class="footer-links">
         <a href="https://github.com/amlclaw/amlclaw.com">Platform Repo</a>
-        <a href="https://github.com/amlclaw/amlclaw">Skills Repo</a>
         <a href="https://width.info">width.info</a>
       </div>
       <p class="footer-license" data-i18n="ft.license">MIT License · AMLClaw</p>
