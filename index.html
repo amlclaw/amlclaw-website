@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMLClaw — Open-Source Crypto AML Screening Platform</title>
-  <meta name="description" content="KYA address screening, KYT transaction screening, batch screening and 24/7 monitoring — powered by the width.info compliance engine with server-side rulesets and transparent path evidence. Self-hosted, MIT-licensed, free." />
+  <title data-i18n="meta.title">AMLClaw — 开源加密货币 AML 筛查平台</title>
+  <meta name="description" data-i18n="meta.desc" content="KYA 地址筛查、KYT 交易筛查、批量筛查与 7×24 持续监控——由 width.info 合规引擎驱动，服务端规则集与资金占比评分，逐条路径证据，自托管、MIT 协议、免费开源。" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <div class="lang-toggle-wrap">
+    <button id="lang-toggle" class="lang-toggle">EN</button>
+  </div>
+
   <!-- Hero -->
   <section class="hero">
     <div class="container">
       <img src="logo.svg" alt="AMLClaw" class="hero-logo" />
-      <h1>Open-Source Crypto AML Screening</h1>
-      <p class="hero-tagline">KYA address screening · KYT transaction screening · batch · 24/7 monitoring.</p>
-      <p class="hero-desc">AMLClaw packages professional on-chain AML screening into a self-hostable web platform. Rulesets run server-side on the width.info engine — Sanctions, Cybercrime, Gambling, Public Freezing Actions and more — with multi-hop fund tracing, per-path evidence, and a fund-attribution score (资金占比评分) returned by the API itself. No black box, no local rule maintenance, no database.</p>
+      <h1 data-i18n="hero.title">开源加密货币 AML 筛查平台</h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">KYA 地址筛查 · KYT 交易筛查 · 批量筛查 · 7×24 持续监控</p>
+      <p class="hero-desc" data-i18n="hero.desc">AMLClaw 把专业链上反洗钱筛查打包成一个可自主部署的 Web 平台。规则集在 width.info 引擎服务端运行——制裁、网络犯罪、赌博、司法冻结等——支持多跳资金追溯、逐条路径证据，以及由 API 直接返回的资金占比评分。没有黑盒、不需要本地维护规则、不需要数据库。</p>
       <div class="hero-install">
-        <code>git clone https://github.com/amlclaw/amlclaw.com && cd amlclaw.com && npm install && npm run dev</code>
+        <code>git clone https://github.com/amlclaw/amlclaw.com &amp;&amp; cd amlclaw.com &amp;&amp; npm install &amp;&amp; npm run dev</code>
       </div>
       <div class="hero-actions">
-        <a href="https://github.com/amlclaw/amlclaw.com" class="btn btn-primary">View on GitHub</a>
-        <a href="https://width.info/api-keys" class="btn btn-secondary">Get a Free API Key</a>
+        <a href="https://github.com/amlclaw/amlclaw.com" class="btn btn-primary" data-i18n="hero.btn1">在 GitHub 查看</a>
+        <a href="https://width.info/api-keys" class="btn btn-secondary" data-i18n="hero.btn2">免费获取 API Key</a>
       </div>
       <div class="stats-bar">
-        <div class="stat-item"><span class="stat-num">KYA+KYT</span><span class="stat-label">Screening Modes</span></div>
+        <div class="stat-item"><span class="stat-num">KYA+KYT</span><span class="stat-label" data-i18n="stat.screen">筛查模式</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-num">50</span><span class="stat-label">Items / Batch</span></div>
+        <div class="stat-item"><span class="stat-num">50</span><span class="stat-label" data-i18n="stat.batch">每批条目</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-num">$0</span><span class="stat-label">MIT License</span></div>
+        <div class="stat-item"><span class="stat-num">$0</span><span class="stat-label" data-i18n="stat.license">MIT 协议</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-num">5 min</span><span class="stat-label">Setup</span></div>
+        <div class="stat-item"><span class="stat-num">5 min</span><span class="stat-label" data-i18n="stat.setup">自主部署</span></div>
       </div>
     </div>
   </section>
@@ -39,28 +43,28 @@
   <!-- Problem -->
   <section class="section section-alt">
     <div class="container">
-      <h2>Still Screening Addresses One at a Time?</h2>
-      <p class="section-desc">In 2026, most crypto compliance still runs on black-box scores, manual copy-paste, and hope.</p>
+      <h2 data-i18n="problem.title">还在一个一个地址手工筛查？</h2>
+      <p class="section-desc" data-i18n="problem.desc">2026 年的加密合规，很多仍停留在黑盒评分、手工复制粘贴和"到时候再说"。</p>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="problem-icon">🔒</div>
-          <h3>"Trust Our Score"</h3>
-          <p>The vendor gives you a number. You ask why. "Proprietary algorithm." Try explaining <em>that</em> to a regulator during an audit — or proving which funds were actually risky.</p>
+          <h3 data-i18n="p1.title">"相信我们的评分"</h3>
+          <p data-i18n="p1.text">厂商给你一个数字，你问为什么——"专有算法"。审计时怎么向监管解释？又怎么证明到底是哪笔资金有问题？</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">🐌</div>
-          <h3>Manual, Address by Address</h3>
-          <p>Paste one address, wait for the trace, copy-paste the report, repeat for the next fifty. Batch screening shouldn't require a spreadsheet and a Friday night.</p>
+          <h3 data-i18n="p2.title">逐个地址手工筛查</h3>
+          <p data-i18n="p2.text">粘贴一个地址、等追溯结果、复制粘贴报告、再处理下一个……五十个地址就得熬一个通宵。批量筛查不该靠电子表格。</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">📴</div>
-          <h3>No Continuous Monitoring</h3>
-          <p>You screen an address today. It gets frozen tomorrow. Nobody knows — because nothing re-checks it, and nothing re-checks its counterparties.</p>
+          <h3 data-i18n="p3.title">没有持续监控</h3>
+          <p data-i18n="p3.text">今天查完一个地址，明天它被冻结了，没人知道——因为没有任何机制会复查它，也不会复查它的对手方。</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">🙏</div>
-          <h3>Compliance Debt</h3>
-          <p>One-off screens don't build an audit trail. Regulators want evidence chains, history, and a defensible verdict — not a screenshot of a score.</p>
+          <h3 data-i18n="p4.title">合规欠债</h3>
+          <p data-i18n="p4.text">一次性筛查构不成审计证据链。监管要的是证据路径、历史记录和可辩护的处置结论——不是一张评分的截图。</p>
         </div>
       </div>
     </div>
@@ -69,37 +73,37 @@
   <!-- Modules -->
   <section class="section">
     <div class="container">
-      <h2>Five Modules. One Compliance Desk.</h2>
-      <p class="section-desc">From a single address to a portfolio of transactions — the whole pipeline runs on the width.info V3 engine.</p>
+      <h2 data-i18n="modules.title">五大模块，一个合规台</h2>
+      <p class="section-desc" data-i18n="modules.desc">从单个地址到一批交易，全流程跑在 width.info V3 引擎上。</p>
       <div class="pipeline">
         <div class="agent-card">
           <div class="agent-number">01</div>
-          <h3>KYA Address Screening</h3>
-          <p>Screen any Ethereum or Tron address with multi-hop fund tracing (0–5 hops each direction). Server-side rulesets flag Sanctions, Cybercrime, Gambling, Freezing Actions — with per-rule path evidence and an interactive fund-flow graph.</p>
+          <h3 data-i18n="m1.title">KYA 地址筛查</h3>
+          <p data-i18n="m1.text">筛查任意以太坊 / Tron 地址，双向多跳追溯资金（0–5 跳）。服务端规则集识别制裁、网络犯罪、赌博、司法冻结等风险，输出逐条规则命中证据与可交互的资金流向图。</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">02</div>
-          <h3>KYT Transaction Screening</h3>
-          <p>Screen a transaction's source of funds (in), destination (out), or both. Chainalysis-aligned alerts with DIRECT/INDIRECT exposure, per-direction rulesets (KYT-IN / KYT-OUT), and full path evidence.</p>
+          <h3 data-i18n="m2.title">KYT 交易筛查</h3>
+          <p data-i18n="m2.text">筛查一笔交易的资金来源（in）、资金去向（out）或两端。Chainalysis 风格告警，DIRECT/INDIRECT 敞口类型，分方向规则集（KYT-IN / KYT-OUT）与完整路径证据。</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">03</div>
-          <h3>Batch Screening</h3>
-          <p>Paste up to 50 addresses or transaction hashes. Async mode with live progress, per-item risk + fund score, one-click full reports, and CSV export for your records.</p>
+          <h3 data-i18n="m3.title">批量筛查</h3>
+          <p data-i18n="m3.text">一次粘贴最多 50 个地址或交易哈希。async 模式实时进度，逐条风险与资金占比评分，一键查看完整报告，支持 CSV 导出留档。</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">04</div>
-          <h3>Address Monitoring</h3>
-          <p>Watch a watched address's <b>future</b> transfers — every new stablecoin transaction is KYT-screened on your schedule, with a full ledger and high-risk webhook alerts.</p>
+          <h3 data-i18n="m4.title">地址监控</h3>
+          <p data-i18n="m4.text">监控地址"加入监控之后"发生的每一笔转账——超过设定金额的新交易自动做 KYT 查询，全量入台账一笔不漏，高风险命中立即触发 Webhook 告警。</p>
         </div>
         <div class="pipeline-arrow">→</div>
         <div class="agent-card">
           <div class="agent-number">05</div>
-          <h3>TX Monitoring</h3>
-          <p>Watch a transaction's from/to counterparty. Periodic KYA re-screening tracks the risk trend and alerts the moment an address gets tagged Sanctions or Freeze, or its level escalates.</p>
+          <h3 data-i18n="m5.title">TX 监控</h3>
+          <p data-i18n="m5.text">盯防交易 from/to 对手方地址本身的风险变化。周期 KYA 复筛跟踪风险走势，一旦被打上制裁 / 冻结标签或风险等级升高，第一时间告警。</p>
         </div>
       </div>
     </div>
@@ -108,29 +112,29 @@
   <!-- Product Walkthrough -->
   <section class="section section-alt" id="screenshots">
     <div class="container">
-      <h2>See It In Action</h2>
-      <p class="section-desc">Screening, evidence, scoring and the dashboard — straight from the width.info API.</p>
+      <h2 data-i18n="wt.title">看它怎么工作</h2>
+      <p class="section-desc" data-i18n="wt.desc">筛查、证据、评分与仪表盘——全部来自 width.info API 的真实返回。</p>
       <div class="walkthrough">
         <div class="walkthrough-stage">
           <div class="walkthrough-step-info">
             <span class="walkthrough-step-number" id="wt-step-num">①</span>
-            <span class="walkthrough-step-text" id="wt-step-text">Address Screening</span>
+            <span class="walkthrough-step-text" id="wt-step-text">地址筛查 (KYA)</span>
           </div>
           <div class="walkthrough-frame">
             <div class="walkthrough-slides" id="wt-slides">
-              <div class="wt-slide active" data-index="0"><img src="screening-1.png" alt="KYA Address Screening" /></div>
-              <div class="wt-slide" data-index="1"><img src="screening-2.png" alt="Evidence Chains" /></div>
-              <div class="wt-slide" data-index="2"><img src="screening-graph.png" alt="Fund-Flow Graph" /></div>
-              <div class="wt-slide" data-index="3"><img src="dashboard.png" alt="Dashboard Overview" /></div>
+              <div class="wt-slide active" data-index="0"><img src="screening-1.png" alt="" data-i18n-alt="wt.alt1" /></div>
+              <div class="wt-slide" data-index="1"><img src="screening-2.png" alt="" data-i18n-alt="wt.alt2" /></div>
+              <div class="wt-slide" data-index="2"><img src="screening-graph.png" alt="" data-i18n-alt="wt.alt3" /></div>
+              <div class="wt-slide" data-index="3"><img src="dashboard.png" alt="" data-i18n-alt="wt.alt4" /></div>
             </div>
           </div>
         </div>
         <div class="walkthrough-controls">
           <div class="walkthrough-dots" id="wt-dots">
-            <button class="wt-dot active" data-index="0"><span class="wt-dot-label">Screening</span></button>
-            <button class="wt-dot" data-index="1"><span class="wt-dot-label">Evidence</span></button>
-            <button class="wt-dot" data-index="2"><span class="wt-dot-label">Graph</span></button>
-            <button class="wt-dot" data-index="3"><span class="wt-dot-label">Dashboard</span></button>
+            <button class="wt-dot active" data-index="0"><span class="wt-dot-label" data-i18n="wt1">筛查</span></button>
+            <button class="wt-dot" data-index="1"><span class="wt-dot-label" data-i18n="wt2">证据</span></button>
+            <button class="wt-dot" data-index="2"><span class="wt-dot-label" data-i18n="wt3">资金图</span></button>
+            <button class="wt-dot" data-index="3"><span class="wt-dot-label" data-i18n="wt4">仪表盘</span></button>
           </div>
           <div class="walkthrough-progress"><div class="walkthrough-progress-bar" id="wt-progress"></div></div>
         </div>
@@ -141,26 +145,26 @@
   <!-- Comparison Table -->
   <section class="section section-alt">
     <div class="container">
-      <h2>Vendor Scores vs. Evidence</h2>
-      <p class="section-desc">One side gives you a number. The other gives you a case file.</p>
+      <h2 data-i18n="cmp.title">厂商评分 vs. 证据链</h2>
+      <p class="section-desc" data-i18n="cmp.desc">一边给你一个数字，另一边给你一份案件档案。</p>
       <div class="table-wrapper">
         <table class="compare-table">
           <thead>
             <tr>
               <th></th>
-              <th class="col-old">Traditional Vendor</th>
-              <th class="col-new">AMLClaw</th>
+              <th class="col-old" data-i18n="cmp.colOld">传统厂商</th>
+              <th class="col-new" data-i18n="cmp.colNew">AMLClaw</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Cost</td><td class="col-old">$100K+ / year</td><td class="col-new highlight">Free (MIT License)</td></tr>
-            <tr><td>Scoring</td><td class="col-old">Black-box "proprietary" score</td><td class="col-new highlight">Server-side rulesets + fund-attribution score, evidence for every point</td></tr>
-            <tr><td>Screening</td><td class="col-old">One address at a time</td><td class="col-new highlight">Single + batch (50/run, async)</td></tr>
-            <tr><td>Rules</td><td class="col-old">Fixed vendor rules</td><td class="col-new highlight">Your own ruleset IDs on width.info, or builtins</td></tr>
-            <tr><td>Monitoring</td><td class="col-old">None or add-on</td><td class="col-new highlight">Address + counterparty, scheduled, alerting</td></tr>
-            <tr><td>Hosting</td><td class="col-old">SaaS lock-in</td><td class="col-new highlight">Self-hosted, file-based, no database</td></tr>
-            <tr><td>Audit Trail</td><td class="col-old">Scattered in emails</td><td class="col-new highlight">History + CSV export + full reports</td></tr>
-            <tr><td>Transparency</td><td class="col-old">Closed source</td><td class="col-new highlight">Open source, every rule hit visible</td></tr>
+            <tr><td data-i18n="cmp.row.cost">成本</td><td class="col-old" data-i18n="cmp.cost.old">每年 $100K+</td><td class="col-new highlight" data-i18n="cmp.cost.new">免费（MIT 协议）</td></tr>
+            <tr><td data-i18n="cmp.row.score">评分</td><td class="col-old" data-i18n="cmp.score.old">黑盒"专有"评分</td><td class="col-new highlight" data-i18n="cmp.score.new">服务端规则集 + 资金占比评分，每分都有证据</td></tr>
+            <tr><td data-i18n="cmp.row.screen">筛查方式</td><td class="col-old" data-i18n="cmp.screen.old">一次一个地址</td><td class="col-new highlight" data-i18n="cmp.screen.new">单条 + 批量（每批 50，async）</td></tr>
+            <tr><td data-i18n="cmp.row.rules">规则</td><td class="col-old" data-i18n="cmp.rules.old">厂商固定规则</td><td class="col-new highlight" data-i18n="cmp.rules.new">width.info 上的自定义规则集 ID，或内置默认</td></tr>
+            <tr><td data-i18n="cmp.row.monitor">监控</td><td class="col-old" data-i18n="cmp.monitor.old">没有，或额外付费</td><td class="col-new highlight" data-i18n="cmp.monitor.new">地址 + 对手方，定时任务，自动告警</td></tr>
+            <tr><td data-i18n="cmp.row.host">部署</td><td class="col-old" data-i18n="cmp.host.old">SaaS 锁定</td><td class="col-new highlight" data-i18n="cmp.host.new">自托管，文件存储，无需数据库</td></tr>
+            <tr><td data-i18n="cmp.row.audit">审计留痕</td><td class="col-old" data-i18n="cmp.audit.old">散落在邮件里</td><td class="col-new highlight" data-i18n="cmp.audit.new">历史记录 + CSV 导出 + 完整报告</td></tr>
+            <tr><td data-i18n="cmp.row.transparency">透明度</td><td class="col-old" data-i18n="cmp.transparency.old">闭源</td><td class="col-new highlight" data-i18n="cmp.transparency.new">开源，每条规则命中都可见</td></tr>
           </tbody>
         </table>
       </div>
@@ -170,13 +174,13 @@
   <!-- Quick Start -->
   <section class="section">
     <div class="container">
-      <h2>Deploy Your Compliance Desk in Five Minutes</h2>
-      <p class="section-desc">Clone, install, run, and paste your free width.info API key in Settings.</p>
+      <h2 data-i18n="qs.title">五分钟部署你的合规台</h2>
+      <p class="section-desc" data-i18n="qs.desc">克隆、安装、运行，然后在设置页粘贴免费的 width.info API Key。</p>
       <div class="code-block code-block-featured">
         <pre><code>git clone https://github.com/amlclaw/amlclaw.com
 cd amlclaw.com
 npm install
-npm run dev   # open http://localhost:3000</code></pre>
+npm run dev   # 打开 http://localhost:3000</code></pre>
       </div>
     </div>
   </section>
@@ -184,24 +188,24 @@ npm run dev   # open http://localhost:3000</code></pre>
   <!-- Out of the Box -->
   <section class="section section-alt">
     <div class="container">
-      <h2>Day One Ready. Not Day Ninety.</h2>
-      <p class="section-desc">Professional screening out of the box — one API key, server-side everything.</p>
+      <h2 data-i18n="val.title">开箱即用，而不是九十天后</h2>
+      <p class="section-desc" data-i18n="val.desc">一个 API Key，服务端全部搞定，专业筛查开箱即用。</p>
       <div class="value-grid">
         <div class="value-card">
-          <div class="value-num">Server-side</div>
-          <p>Rulesets &amp; scoring run on the width.info engine — no local rule maintenance, always current</p>
+          <div class="value-num" data-i18n="v1.num">服务端</div>
+          <p data-i18n="v1.text">规则集与评分在 width.info 引擎运行——无需本地维护规则，始终最新</p>
         </div>
         <div class="value-card">
-          <div class="value-num">2+2</div>
-          <p>Screening modes (KYA / KYT) and monitoring modes (address / counterparty), plus batch</p>
+          <div class="value-num" data-i18n="v2.num">2+2</div>
+          <p data-i18n="v2.text">两类筛查（KYA / KYT）+ 两类监控（地址 / 对手方），外加批量</p>
         </div>
         <div class="value-card">
           <div class="value-num">50</div>
-          <p>Addresses or tx hashes per batch — async, live progress, CSV export</p>
+          <p data-i18n="v3.text">每批最多 50 个地址或交易哈希——async、实时进度、CSV 导出</p>
         </div>
         <div class="value-card">
-          <div class="value-num">No DB</div>
-          <p>File-based storage, backup-friendly, deploy anywhere — even Docker</p>
+          <div class="value-num" data-i18n="v4.num">无需 DB</div>
+          <p data-i18n="v4.text">文件存储，备份友好，随处部署——甚至 Docker</p>
         </div>
       </div>
     </div>
@@ -210,19 +214,19 @@ npm run dev   # open http://localhost:3000</code></pre>
   <!-- Open Source Ecosystem -->
   <section class="section">
     <div class="container">
-      <h2>Open Source Ecosystem</h2>
-      <p class="section-desc">Two products. Both free. Both yours.</p>
+      <h2 data-i18n="eco.title">开源生态</h2>
+      <p class="section-desc" data-i18n="eco.desc">两个产品。都免费。都属于你。</p>
       <div class="cards-two">
         <div class="card">
-          <div class="card-badge">Web UI</div>
-          <h3>🖥️ AMLClaw Platform</h3>
-          <p>KYA / KYT / batch screening and 24/7 monitoring in a self-hostable Next.js app. Bilingual (中文 / English), dark &amp; light themes, file-based storage.</p>
+          <div class="card-badge" data-i18n="eco1.badge">Web 平台</div>
+          <h3 data-i18n="eco1.title">🖥️ AMLClaw 平台</h3>
+          <p data-i18n="eco1.text">KYA / KYT / 批量筛查与 7×24 监控，自托管 Next.js 应用。中英双语、深色/浅色主题、文件存储。</p>
           <a href="https://github.com/amlclaw/amlclaw.com" class="card-link">github.com/amlclaw/amlclaw.com →</a>
         </div>
         <div class="card">
-          <div class="card-badge">Skills</div>
-          <h3>🦅 AMLClaw Skills</h3>
-          <p>Agent-friendly skill pack for AI coding agents — address screening and compliance rule authoring as reusable skills.</p>
+          <div class="card-badge" data-i18n="eco2.badge">Skills</div>
+          <h3 data-i18n="eco2.title">🦅 AMLClaw Skills</h3>
+          <p data-i18n="eco2.text">面向 AI 编码代理的技能包——地址筛查与合规规则编写，作为可复用技能提供。</p>
           <a href="https://github.com/amlclaw/amlclaw" class="card-link">github.com/amlclaw/amlclaw →</a>
         </div>
       </div>
@@ -232,13 +236,13 @@ npm run dev   # open http://localhost:3000</code></pre>
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-tagline">Open-source AML screening, powered by the width.info compliance engine.</p>
+      <p class="footer-tagline" data-i18n="ft.tagline">开源 AML 筛查，由 width.info 合规引擎驱动。</p>
       <div class="footer-links">
         <a href="https://github.com/amlclaw/amlclaw.com">Platform Repo</a>
         <a href="https://github.com/amlclaw/amlclaw">Skills Repo</a>
         <a href="https://width.info">width.info</a>
       </div>
-      <p class="footer-license">MIT License · AMLClaw</p>
+      <p class="footer-license" data-i18n="ft.license">MIT License · AMLClaw</p>
     </div>
   </footer>
 

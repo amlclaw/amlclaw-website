@@ -679,3 +679,26 @@ a:hover { color: var(--accent-hover); }
   .wt-dot-label { display: none; }
   .wt-dot { width: 28px; height: 28px; border-radius: 50%; justify-content: center; padding: 0; }
 }
+
+/* Language toggle */
+.lang-toggle-wrap {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 100;
+}
+.lang-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
